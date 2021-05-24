@@ -1,5 +1,5 @@
-Usage
-=====
+Guides
+======
 
 `Minimal Example`_
 ******************
