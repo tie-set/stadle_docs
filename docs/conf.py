@@ -19,7 +19,7 @@
 
 project = 'STADLE'
 copyright = '2021, TieSet'
-author = 'Anthony Maddalone & Norikazu Furukawa'
+author = 'Kiyoshi Nakayama, Norikazu Furukawa and Anthony Maddalone'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0'
