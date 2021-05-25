@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Usage &mdash; STADLE 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Documentation" href="documentation.html" />
+    <link rel="prev" title="Installation" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> STADLE
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#minimal-example">Minimal Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-execution">Sample Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simulation">Simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#common">Common</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aggregator-side">Aggregator Side</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agent-side">Agent Side</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#image-classification-application">Image Classification Application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">STADLE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/usage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="minimal-example">
+<h2><a class="reference external" href="https://github.com/tie-set/stadle_dev/tree/master/stadle/prototypes/minimal">Minimal Example</a><a class="headerlink" href="#minimal-example" title="Permalink to this headline">¶</a></h2>
+<p>This sample does not have actual training. This could be used as a template
+for user implementation of ML Engine.</p>
+<div class="section" id="sample-execution">
+<h3>Sample Execution<a class="headerlink" href="#sample-execution" title="Permalink to this headline">¶</a></h3>
+<p># Edit the configuration file <a class="reference external" href="https://github.com/tie-set/stadle_dev/blob/master/setups/config.json">setups/config.jason</a>. The configuration details
+are explained <a class="reference external" href="https://github.com/tie-set/stadle_dev/tree/master/setups">here</a>.
+# Run the following four modules as separated processes in the order of
+<code class="docutils literal notranslate"><span class="pre">pseudo_db</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">server_th</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">minimal_MLEngine</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">client2</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">pseudodb</span><span class="o">.</span><span class="n">pseudo_db</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">aggregator</span><span class="o">.</span><span class="n">server_th</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">prototypes</span><span class="o">.</span><span class="n">minimal</span><span class="o">.</span><span class="n">minimal_MLEngine</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">client2</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="simulation">
+<h3>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h3>
+<p>Beta-ver: STADLE can be run for simulation on the same machine by specifying
+the port numbers for agents and aggregators.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">pseudodb</span><span class="o">.</span><span class="n">pseudo_db</span> <span class="p">[</span><span class="n">simulation_flag</span><span class="p">]</span> <span class="p">[</span><span class="n">config_path</span><span class="p">]</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">aggregator</span><span class="o">.</span><span class="n">server_th</span> <span class="p">[</span><span class="n">simulation_flag</span><span class="p">]</span> <span class="p">[</span><span class="n">participation_port</span><span class="p">]</span> <span class="p">[</span><span class="n">local_model_recv_port</span><span class="p">]</span> <span class="p">[</span><span class="n">path_to_local_file</span><span class="p">]</span> <span class="p">[</span><span class="n">config_path</span><span class="p">]</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">prototypes</span><span class="o">.</span><span class="n">minimal</span><span class="o">.</span><span class="n">minimal_MLEngine</span> <span class="p">[</span><span class="n">simulation_flag</span><span class="p">]</span> <span class="p">[</span><span class="n">path_to_local_file</span><span class="p">]</span> <span class="p">[</span><span class="n">config_path</span><span class="p">]</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">client2</span> <span class="p">[</span><span class="n">simulation_flag</span><span class="p">]</span> <span class="p">[</span><span class="n">participation_port</span><span class="p">]</span> <span class="p">[</span><span class="n">sg_model_recv_port</span><span class="p">]</span> <span class="p">[</span><span class="n">path_to_local_file</span><span class="p">]</span> <span class="p">[</span><span class="n">config_path</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="common">
+<h3>Common<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">simulation_flag</span></code>: 1 if it’s simulation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">config_path</span></code>: Path to the config file. If <code class="docutils literal notranslate"><span class="pre">AUTO</span></code>, the config file in <code class="docutils literal notranslate"><span class="pre">(repo</span> <span class="pre">root)</span>
+<span class="pre">/setups/config.json</span></code>. (For the consistency with older versions, it automatically
+sets this flag to <code class="docutils literal notranslate"><span class="pre">AUTO</span></code> when no flag is given).</p></li>
+</ul>
+</div>
+<div class="section" id="aggregator-side">
+<h3>Aggregator Side<a class="headerlink" href="#aggregator-side" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">participation_port</span></code>: Port number waiting for a new agent’s participate
+message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">local_model_recv_port</span></code>: Port number waiting for local model uploads
+from agents. This will be communicated to each agent who sends a participate
+message to this aggregator via the welcome message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path_to_local_file</span></code>: Path to the local directory storing the aggr_id
+file about a unique aggregator ID. This needs to be unique for every
+aggregator.</p></li>
+</ul>
+</div>
+<div class="section" id="agent-side">
+<h3>Agent Side<a class="headerlink" href="#agent-side" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">participation_port</span></code>: Port number to send a participate message.
+It needs to match with participation_port of the aggregator to which
+the agent sends the message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sg_model_recv_port</span></code>: Port number waiting for SG models from the
+aggregator. This will be communicated to a selected aggregator via a
+participate message.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">path_to_local_file</span></code>: Path to the local directory storing the state
+and model files. This needs to be unique for every agent (The same one for
+one pair of MLEngine and Client2).</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">pseudodb</span><span class="o">.</span><span class="n">pseudo_db</span> <span class="mi">1</span> <span class="n">AUTO</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">aggregator</span><span class="o">.</span><span class="n">server_th</span> <span class="mi">1</span> <span class="mi">50001</span> <span class="mi">50002</span> <span class="o">./</span><span class="n">data</span><span class="o">/</span><span class="n">aggr01</span> <span class="n">AUTO</span>
+<span class="c1"># First agent</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">prototypes</span><span class="o">.</span><span class="n">minimal</span><span class="o">.</span><span class="n">minimal_MLEngine</span> <span class="mi">1</span> <span class="o">./</span><span class="n">data</span><span class="o">/</span><span class="n">agent01</span> <span class="n">AUTO</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">client2</span> <span class="mi">1</span> <span class="mi">50001</span> <span class="mi">50003</span> <span class="o">./</span><span class="n">data</span><span class="o">/</span><span class="n">agent01</span> <span class="n">AUTO</span>
+<span class="c1"># Second agent</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">prototypes</span><span class="o">.</span><span class="n">minimal</span><span class="o">.</span><span class="n">minimal_MLEngine</span> <span class="mi">1</span> <span class="o">./</span><span class="n">data</span><span class="o">/</span><span class="n">agent02</span> <span class="n">AUTO</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">stadle</span><span class="o">.</span><span class="n">agent</span><span class="o">.</span><span class="n">client2</span> <span class="mi">1</span> <span class="mi">50001</span> <span class="mi">50004</span> <span class="o">./</span><span class="n">data</span><span class="o">/</span><span class="n">agent02</span> <span class="n">AUTO</span>
+</pre></div>
+</div>
+<p># Edit the configuration file <code class="docutils literal notranslate"><span class="pre">setups/config.jason</span></code>.
+# Run the following four modules as separated processes in the order of
+<code class="docutils literal notranslate"><span class="pre">pseudo_db</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">server_th</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">minimal_MLEngine</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">client2</span></code></p>
+</div>
+</div>
+<div class="section" id="image-classification-application">
+<h2><a class="reference external" href="https://github.com/tie-set/stadle_dev/tree/master/stadle/prototypes/image_classification">Image Classification Application</a><a class="headerlink" href="#image-classification-application" title="Permalink to this headline">¶</a></h2>
+<p>This sample provides a simple example of STADLE integration with “actual”
+ML training. Please go to the <a class="reference external" href="https://github.com/tie-set/stadle_dev/tree/master/stadle/prototypes/image_classification">prototype directory</a> for more details.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="documentation.html" class="btn btn-neutral float-right" title="Documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, TieSet.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
