@@ -1,7 +1,7 @@
 # stadle-docs
 
 
-! [logo](stadle-docs/blob/main/_images/logo.png)
+! [logo](main/_images/logo.png)
 
 
 
