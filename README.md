@@ -24,7 +24,7 @@ Our STADLE platform enhances the capability of FL by incorporating decentralized
 Get started in 10 minutes  or take a tour of the library.
 
 ## Documentation
-For additional guides, examples, and API’s see the documentation. 
+[For additional guides, examples, and API’s see the documentation.](https://stadle-documentation.readthedocs.io/en/latest/index.html)
 
 ## Want to help?
 Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our guidelines for contributing, then check out issues that are labeled Good First Issue. ( ?? link to bugs/issues??)
