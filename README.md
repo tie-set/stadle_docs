@@ -21,10 +21,10 @@ Our STADLE platform enhances the capability of FL by incorporating decentralized
 
 
 ## Quickstart
-Get started in 10 minutes  or take a tour of the library.
+[Get started in 10 minutes  or take a tour of the library.](https://stadle-documentation.readthedocs.io/en/latest/index.html)
 
 ## Documentation
 [For additional guides, examples, and API’s see the documentation.](https://stadle-documentation.readthedocs.io/en/latest/index.html)
 
 ## Want to help?
-Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our guidelines for contributing, then check out issues that are labeled Good First Issue. ( ?? link to bugs/issues??)
+[Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our guidelines for contributing, then check out issues that are labeled Good First Issue.](https://stadle-documentation.readthedocs.io/en/latest/index.html)
