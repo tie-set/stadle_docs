@@ -1,4 +1,10 @@
 # stadle-docs
+
+
+![logo](docs/_src/_static/logo.png)
+
+
+
 # Introduction
 Our STADLE platform is a paradigm-shifting technology for adaptive and continuous learning combining privacy-preserving Machine Learning (ML) and decentralized system capability to provide scalable, versatile, and secure AI services. STADLE stands for Scalable & Traceable AI platform for Distributed LEarning.
 
