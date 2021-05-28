@@ -2,7 +2,7 @@
 STADLE v1.0
 ===========
 
-.. image:: https://github.com/tie-set/stadle-docs/blob/main/_images/logo.png
+.. image:: _images/logo.png
 
 Quick Start
 ===========
