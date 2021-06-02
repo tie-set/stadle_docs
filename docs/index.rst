@@ -3,17 +3,18 @@
   :width: 400
   :alt: Alternative text
 
+
 Quick Start
 ===========
 
 
 
 Installation
-************
+=============
 
 
 Using STADLE
-************
+============
 
 Server
 ------
