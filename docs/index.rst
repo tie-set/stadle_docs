@@ -1,13 +1,11 @@
-===========
-STADLE v2.0
-===========
+
 
 .. image:: _images/logo.png
 
 Quick Start
 ===========
 
-Hi Kiyoshi
+
 
 Installation
 ************
