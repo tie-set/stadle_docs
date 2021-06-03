@@ -13,9 +13,6 @@ Small Heading
 ---------------
 
 
-Using STADLE
-============
-
 * bullet point
 
 ::
