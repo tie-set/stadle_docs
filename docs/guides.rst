@@ -1,7 +1,7 @@
 Guides
 ======
 
-`Minimal Example`_
+`Examples`_
 ******************
 
 This sample does not have actual training. This could be used as a template 

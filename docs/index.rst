@@ -1,18 +1,17 @@
-===========
-STADLE v1.0
-===========
 
-.. image:: _images/logo.png
+.. image:: stadle-docs/_images/logo.png
 
 Quick Start
 ===========
+hi
+
 
 Installation
-************
+=============
 
 
 Using STADLE
-************
+============
 
 Server
 ------
