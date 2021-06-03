@@ -1,5 +1,5 @@
 
-.. image:: stadle-docs/_images/logo.png
+.. image:: ../_images/logo.png
 
 Quick Start
 ===========
