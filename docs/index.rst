@@ -59,10 +59,10 @@ Registration
    tech_support
    tables
    template
-
+   
 .. toctree::
    :maxdepth: 3
-   :caption: Guides:
+   :caption: Test:
    
    Examples
    testing
