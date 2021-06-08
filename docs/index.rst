@@ -1,5 +1,5 @@
 
-.. image:: ../_images/logo.png
+.. image:: ../_static/logo.png
 
 Quick Start
 ===========
@@ -51,9 +51,11 @@ Registration
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
-
+   
    overview
+   GUI
    release_notes
    guides
    tech_support
    tables
+   template

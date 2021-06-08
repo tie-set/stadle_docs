@@ -4,13 +4,13 @@ THIS IS A TEMPLATE
 
 
 Large Heading
-===========
+=============
 
 Medium Heading
-*******************
+**************
 
 Small Heading
----------------
+-------------
 
 
 * bullet point
