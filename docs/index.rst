@@ -65,5 +65,5 @@ Registration
    :caption: Guides:
    
    Examples
-   Image Classsification Application
+   testing
    
