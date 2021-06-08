@@ -62,5 +62,8 @@ Registration
    
 .. toctree::
    :maxdepth: 3
-   :caption: Guides:   
+   :caption: Guides:
+   
+   Examples
+   Image Classsification Application
    
