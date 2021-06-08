@@ -52,7 +52,7 @@ Registration
    :maxdepth: 3
    :caption: Contents:
    
-   overview
+   Getting Started
    GUI
    release_notes
    guides
