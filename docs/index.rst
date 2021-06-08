@@ -50,12 +50,17 @@ Registration
 
 .. toctree::
    :maxdepth: 3
-   :caption: Contents:
+   :caption: Getting Started:
    
-   Getting Started
+   Overview
    GUI
    release_notes
    guides
    tech_support
    tables
    template
+   
+.. toctree::
+   :maxdepth: 3
+   :caption: Guides:   
+   
