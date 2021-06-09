@@ -1,9 +1,20 @@
 
 .. image:: ../_static/logo.png
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Getting Started:
+   
+   overview
+   installation
+   guides
+   GUI
+   tables
+   tech_support
+   release_notes
+  
 Quick Start
 ===========
-testing
 
 
 Installation
@@ -12,6 +23,9 @@ Installation
 
 Using STADLE
 ============
+
+Guides
+*******
 
 Server
 ------
@@ -46,17 +60,4 @@ Database Device
     conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
 
 Registration
-************
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Getting Started:
-   
-   overview
-   installation
-   guides
-   GUI
-   tables
-   tech_support
-   release_notes
-  
+------------
