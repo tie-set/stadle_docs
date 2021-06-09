@@ -5,12 +5,12 @@ Installation Instructions
 Server Install
 **************
 
-```sh
+.. code-block:: python
 # macOS
 conda env create -n stadleenv -f ./setups/stadleenv.yaml
 # Linux
 conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
-```
+
 
 Note: The environment has ```Python 3.7.4```. There is some known issues of ```ipfshttpclient``` with ```Python 3.7.2 and older```.
 
