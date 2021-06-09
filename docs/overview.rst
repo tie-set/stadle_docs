@@ -14,4 +14,4 @@ Our STADLE platform enhances the capability of FL by incorporating decentralized
 * 5G-friendliness: The delay in communication to obtain collective intelligence can be dramatically reduced by employing decentralized FL servers located at edge servers.
 * Traceability: Our platform has the performance tracking capability that monitors and manages the transition of collective intelligence models in the decentralized system.
 
-
+Ready to get started? Great! Click here for installation steps.
