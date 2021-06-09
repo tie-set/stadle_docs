@@ -53,6 +53,7 @@ Registration
    :caption: Getting Started:
    
    overview
+   installation
    guides
    GUI
    tables
