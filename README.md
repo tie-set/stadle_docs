@@ -1,8 +1,6 @@
 # stadle-docs
 
-
-![logo](stadle-docs/_static/logo.png)
-
+![logo](https://user-images.githubusercontent.com/4065635/121279230-7a252580-c891-11eb-82c9-4324ec44efbb.png)
 
 
 # Introduction
