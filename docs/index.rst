@@ -14,6 +14,7 @@
    tables
    tech_support
    release_notes
+   download
   
 Quick Start
 ===========
