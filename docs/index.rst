@@ -33,6 +33,7 @@ Server
 ------
 
 ::
+
     For macOS:
     conda env create -n stadleenv -f ./setups/stadleenv.yaml
     For Linux:
