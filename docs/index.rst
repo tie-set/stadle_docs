@@ -7,6 +7,7 @@
    
    overview
    installation
+   usage
    guides
    GUI
    tables
