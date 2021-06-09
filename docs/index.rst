@@ -1,6 +1,7 @@
 
 .. image:: ../_static/logo.png
 
+
 .. toctree::
    :maxdepth: 3
    :caption: Getting Started:
