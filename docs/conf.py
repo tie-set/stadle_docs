@@ -58,6 +58,6 @@ html_logo = "_static/logo.png"
 
 html_css_files = ["css/toggle.css"]
 
-html_js_files = ["js/toggle.js"]
+html_js_files = ["js/matomo.js", "js/toggle.js"]
 
 html_extra_path = ["_static/css"]
