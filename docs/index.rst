@@ -30,7 +30,9 @@
    :maxdepth: 1
    :caption: Developers:
    
-   
+   installation
+   release_notes
+   tables
    
 .. toctree::
    :maxdepth: 1
@@ -44,7 +46,7 @@
    :maxdepth: 1
    :caption: Community:
   
-  
+   
   
 Quick Start
 ===========
