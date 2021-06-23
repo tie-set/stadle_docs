@@ -21,6 +21,9 @@
    :maxdepth: 1
    :caption: Users:
    
+   usage
+   guides
+   GUI
    
    
 .. toctree::
@@ -33,6 +36,8 @@
    :maxdepth: 1
    :caption: Technical Support:
    
+   tech_support
+   download
    
    
 .. toctree::
