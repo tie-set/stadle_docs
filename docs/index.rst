@@ -3,8 +3,8 @@
 
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Getting Started:
+   :maxdepth: 1
+   :caption: General Overview:
    
    overview
    installation
@@ -15,6 +15,25 @@
    tech_support
    release_notes
    download
+   
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Users:
+   
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Developers:
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Technical Support:
+   
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Community:
   
 Quick Start
 ===========
