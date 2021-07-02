@@ -151,9 +151,9 @@ Image Classification Application
 
 This sample provides a simple example of STADLE integration with "actual" ML training. Please go to the prototype directory for more details.
 
-
-
 .. image:: ../_static/STADLE_architecture.png
+
+
 
 
 
