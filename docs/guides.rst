@@ -86,8 +86,8 @@ For example:
     python -m stadle.prototypes.minimal.minimal_MLEngine 1 ./data/agent02 AUTO
     python -m stadle.agent.client2 1 50001 50004 ./data/agent02 AUTO
 
-# Edit the configuration file ``setups/config.jason``.
-# Run the following four modules as separated processes in the order of 
+Edit the configuration file ``setups/config.jason``.
+Run the following four modules as separated processes in the order of 
 ``pseudo_db`` -> ``server_th`` -> ``minimal_MLEngine`` -> ``client2``
 
 `Image Classification Application`_
