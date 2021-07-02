@@ -6,11 +6,13 @@ Server Install
 **************
 
 macOS
+
 .. code-block:: python
 
 conda env create -n stadleenv -f ./setups/stadleenv.yaml
 
 Linux
+
 .. code-block:: python
 
 conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
