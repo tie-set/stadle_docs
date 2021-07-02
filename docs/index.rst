@@ -2,98 +2,96 @@
 .. image:: ../_static/logo.png
 
 
+Welcome to the STADLE 2.0 documentation!
+========================================
+
+STADLE 2.0's documentation is divided into four parts:
+
+User documentation, for users and administrators of STADLE
+Installation documentation, for installing and maintaining STADLE
+
+
+If you're unable to find what you're looking for, please let us know! Further information on STADLE and it's features can be found on our website .....
+
+If this is your first time here, you may want to start with the Overview section. 
+
+
+Contents:
+
+* :ref:`Overview <overview>`
+* :ref:`Installation <installation>`
+* :ref:`Usage <usage>`
+* :ref:`Guides <guides>`
+* :ref:`GUI <gui>`
+* :ref:`Tables <tables>`
+* :ref:`Tech Support <tech_support>`
+* :ref:`Release Notes <release_notes>`
+* :ref:`Download <download>`
+
+
+.. _overview:
+
 .. toctree::
-   :maxdepth: 1
-   :caption: General Overview:
-   
-   overview
-   installation
-   usage
-   guides
-   GUI
-   tables
-   tech_support
-   release_notes
-   download
-   
-   
+   :maxdepth: 3
+
+   overview/index
+
+.. _installation:
+
 .. toctree::
-   :maxdepth: 1
-   :caption: Users:
-   
-   usage
-   guides
-   GUI
-   
-   
+   :maxdepth: 3
+
+   production/index
+
+.. _usage:
+
 .. toctree::
-   :maxdepth: 1
-   :caption: Developers:
-   
-   installation
-   release_notes
-   tables
-   
+   :maxdepth: 3
+
+   development/index
+
+.. _guides:
+
 .. toctree::
-   :maxdepth: 1
-   :caption: Technical Support:
-   
-   tech_support
-   download
-   
-   
+   :maxdepth: 3
+
+   tutorials/index
+
+.. _gui:
+
 .. toctree::
-   :maxdepth: 1
-   :caption: Community:
-  
-   
-  
-Quick Start
-===========
+   :maxdepth: 3
+
+   git/index
+
+.. _tables:
+
+.. toctree::
+   :maxdepth: 3
+
+   contributing/index
+
+.. _tech_support:
+
+.. toctree::
+   :maxdepth: 3
+
+   testing/index
+
+.. _release_notes:
+
+.. toctree::
+   :maxdepth: 3
+
+   subsystems/index
+
+.. _download:
+
+.. toctree::
+   :maxdepth: 3
+
+   documentation/index
 
 
-Installation
-=============
+   Index <https://stadle-documentation.readthedocs.io/en/latest/>
 
-
-Using STADLE
-============
-
-Guides
-*******
-
-Server
-------
-
-::
-
-    For macOS:
-    conda env create -n stadleenv -f ./setups/stadleenv.yaml
-    For Linux:
-    conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
-
-Note: The environment has ``Python 3.7.4.`` There is some known issues of 
-``ipfshttpclient`` with ``Python 3.7.2 and older``.
-
-User (Agent) Device
--------------------
-
-::
-  
-    For macOS:
-    conda env create -n stadleenv -f ./setups/stadleenv.yaml
-    For Linux:
-    conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
-
-Database Device
----------------
-
-::
-  
-    For macOS:
-    conda env create -n stadleenv -f ./setups/stadleenv.yaml
-    For Linux:
-    conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
-
-Registration
-------------
