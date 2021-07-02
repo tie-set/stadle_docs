@@ -12,7 +12,7 @@ for user implementation of ML Engine.
 Sample Execution
 ----------------
 
-# Edit the configuration file `setups/config.jason`_. The configuration details 
+Edit the configuration file `setups/config.jason`_. The configuration details 
 are explained `here`_.
 # Run the following four modules as separated processes in the order of 
 ``pseudo_db`` -> ``server_th`` -> ``minimal_MLEngine`` -> ``client2``.
