@@ -34,7 +34,7 @@ Contents:
 .. toctree::
    :maxdepth: 3
 
-   overview/index
+   A
 
 .. _installation:
 
