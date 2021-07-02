@@ -153,6 +153,9 @@ This sample provides a simple example of STADLE integration with "actual" ML tra
 
 
 
+.. image:: ../_static/STADLE_architecture.png
+
+
 
 
 
