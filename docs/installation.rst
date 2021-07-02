@@ -44,7 +44,8 @@ Database device
 
 
 
-Be sure to activate the virtual environment.  
+Be sure to activate the virtual environment. 
+
 
 .. code-block:: shell
    # macOS
@@ -55,4 +56,40 @@ Be sure to activate the virtual environment.
 
 Usage
 =======
+
+Minimal Example
+---------------
+
+
+This sample does not have actual training. This could be used as a template for user implementation of ML Engine.
+
+
+Sample Execution
+1.Edit the configuration files setups/config_db.json, setups/config_aggregator.json, and setups/config_agent.json. The configuration details are explained here.
+2.Run the following four modules as separated processes in the order of pseudo_db -> server_th -> client -> minimal_MLEngine. In the sample execution above, the STADLE client is runnning even the ML engine is stopped. You can reconnect ML engine by rerun the module again.
+
+
+.. code-block:: shell
+   # STADLE execution
+   python -m stadle.pseudodb.pseudo_db
+   python -m stadle.aggregator.server_th
+   python -m stadle.agent.client
+   # Sample ML Application execution
+   python -m prototypes.minimal.minimal_MLEngine
+ 
+ 
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
 
