@@ -11,7 +11,7 @@ User documentation, for users and administrators of STADLE
 Installation documentation, for installing and maintaining STADLE
 
 
-If you're unable to find what you're looking for, please let us know! Further information on STADLE and it's features can be found on our website 'www.tie-set.com'
+If you're unable to find what you're looking for, please let us know! Further information on STADLE and it's features can be found on our website 'http://www.tie-set.com<http://www.tie-set.com>`__.
 
 If this is your first time here, you may want to start with the Overview section. 
 
