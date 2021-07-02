@@ -43,6 +43,7 @@ Database device
    conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
 
 
+
 Be sure to activate the virtual environment.  
 
 .. code-block:: shell
