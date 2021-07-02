@@ -24,31 +24,33 @@ Note: The environment has ```Python 3.7.4```. There is some known issues of ```i
 User (Agent) device
 ********************
 
-```sh
-# macOS
-conda env create -n stadleenv -f ./setups/stadleenv.yaml
-# Linux
-conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
+.. code-block:: shell
 
-```
+   # macOS
+   conda env create -n stadleenv -f ./setups/stadleenv.yaml
+   # Linux
+   conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
+
+
 
 Database device
 *******************
 
-```sh
-# macOS
-conda env create -n stadleenv -f ./setups/stadleenv.yaml
-# Linux
-conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
-```
+.. code-block:: shell
+   # macOS
+   conda env create -n stadleenv -f ./setups/stadleenv.yaml
+   # Linux
+   conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
+
 
 Be sure to activate the virtual environment.  
-```sh
-# macOS
-conda activate stadleenv
-# Linux
-source activate stadleenv
-```
+
+.. code-block:: shell
+   # macOS
+   conda activate stadleenv
+   # Linux
+   source activate stadleenv
+
 
 Usage
 =======
