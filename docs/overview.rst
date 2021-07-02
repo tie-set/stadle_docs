@@ -18,6 +18,15 @@ Our STADLE platform enhances the capability of FL by incorporating decentralized
 
 Ready to get started? Great! Click here for installation steps.
 
+A
+---
+
+B
+---
+
+C
+---
+
 
 .. toctree::
    :maxdepth: 3
