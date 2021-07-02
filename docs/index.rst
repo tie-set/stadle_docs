@@ -5,13 +5,13 @@
 Welcome to the STADLE 2.0 documentation!
 ========================================
 
-STADLE 2.0's documentation is divided into four parts:
+STADLE 2.0's documentation is divided into several parts:
 
 User documentation, for users and administrators of STADLE
 Installation documentation, for installing and maintaining STADLE
 
 
-If you're unable to find what you're looking for, please let us know! Further information on STADLE and it's features can be found on our website .....
+If you're unable to find what you're looking for, please let us know! Further information on STADLE and it's features can be found on our website 'www.tie-set.com'
 
 If this is your first time here, you may want to start with the Overview section. 
 
