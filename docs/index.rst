@@ -29,7 +29,7 @@ Our STADLE platform enhances the capability of FL by incorporating decentralized
 
 Quickstart
 ----------
-Get started in 10 minutes  or take a tour of the library. https://stadle-documentation.readthedocs.io/en/latest/index.html
+Get started in 10 minutes  or take a tour of the 'library <https://stadle-documentation.readthedocs.io/en/latest/index.html>`_
 
 Documentation
 -------------
