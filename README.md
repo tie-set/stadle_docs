@@ -3,11 +3,8 @@
 ![logo](https://user-images.githubusercontent.com/4065635/121279230-7a252580-c891-11eb-82c9-4324ec44efbb.png)
 
 [![Documentation Status](https://readthedocs.org/projects/stadle-documentation/badge/?version=latest)](https://stadle-documentation.readthedocs.io/en/latest/?badge=latest)
-
 ![GitHub top language](https://img.shields.io/github/languages/top/tie-set/stadle-docs)
-
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/tie-set/stadle-docs)
-
 ![GitHub last commit](https://img.shields.io/github/last-commit/tie-set/stadle-docs)
 
 # Introduction
