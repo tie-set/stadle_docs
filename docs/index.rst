@@ -8,6 +8,7 @@
 .. image:: https://img.shields.io/github/commit-activity/w/tie-set/stadle-docs   :alt: GitHub commit activity
 
 
+
 Welcome to the STADLE 2.0 documentation!
 ========================================
 
