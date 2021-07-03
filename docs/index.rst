@@ -5,7 +5,7 @@
 .. image:: https://img.shields.io/github/languages/code-size/tie-set/stadle-docs   :alt: GitHub code size in bytes 
 
 
-<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/tie-set/stadle-docs">
+.. image:: https://img.shields.io/github/commit-activity/m/tie-set/stadle-docs   :alt: GitHub commit activity
 
 
 
