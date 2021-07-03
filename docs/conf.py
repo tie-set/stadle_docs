@@ -71,7 +71,11 @@ html_logo = '_static/logo.png'
 
 ### until here
 
-html_css_files = ["css/toggle.css"]
+# html_css_files = ["css/toggle.css"]
+
+html_css_files = [
+    'css/rtd_dark.css',
+]
 
 html_js_files = ["js/matomo.js", "js/toggle.js"]
 
