@@ -2,6 +2,10 @@
 .. image:: ../_static/logo.png
 
 
+.. image:: https://readthedocs.org/projects/stadle-documentation/badge/?version=latest
+:target: https://stadle-documentation.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
+
 Welcome to the STADLE 2.0 documentation!
 ========================================
 
