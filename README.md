@@ -4,7 +4,7 @@
 
 [![Documentation Status](https://readthedocs.org/projects/stadle-documentation/badge/?version=latest)](https://stadle-documentation.readthedocs.io/en/latest/?badge=latest)
 
-![GitHub branch checks state](https://img.shields.io/github/checks-status/baddfish/stadle-docs/main)
+![GitHub top language](https://img.shields.io/github/languages/top/tie-set/stadle-docs)
 
 # Introduction
 Our STADLE platform is a paradigm-shifting technology for adaptive and continuous learning combining privacy-preserving Machine Learning (ML) and decentralized system capability to provide scalable, versatile, and secure AI services. STADLE stands for Scalable & Traceable AI platform for Distributed LEarning.
