@@ -1,4 +1,4 @@
-.. image:: ../_static/logo.png
+.. image:: ../_static/Stadle_logo.png
 
 Overview
 ========
