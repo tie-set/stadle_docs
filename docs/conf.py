@@ -14,6 +14,8 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+py -3 -m pip install sphinx-rtd-dark-mode
+
 ## added this whole line
 import sphinx_rtd_theme
 
