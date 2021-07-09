@@ -1,5 +1,5 @@
 
-.. image:: ../_static/logo.png
+.. image:: ../_static/STADLE_logo.png
 
 
 .. image:: https://img.shields.io/github/languages/code-size/tie-set/stadle-docs   :alt: GitHub code size in bytes 
