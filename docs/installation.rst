@@ -1,5 +1,5 @@
 Installation Instructions
-==================
+=========================
 
 
 Server Install
@@ -32,7 +32,7 @@ User (Agent) device
    conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
 
 Database device
-*******************
+***************
 
 .. code-block:: shell
 
@@ -51,7 +51,7 @@ Be sure to activate the virtual environment.
    source activate stadleenv
 
 Usage
-=======
+=====
 
 Minimal Example
 ---------------
