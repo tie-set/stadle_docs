@@ -1,6 +1,6 @@
 # stadle-docs
 
-![logo](https://user-images.githubusercontent.com/4065635/121279230-7a252580-c891-11eb-82c9-4324ec44efbb.png)
+![logo](https://github.com/tie-set/stadle-docs/blob/main/_static/STADLE_logo.png)
 
 [![Documentation Status](https://readthedocs.org/projects/stadle-documentation/badge/?version=latest)](https://stadle-documentation.readthedocs.io/en/latest/?badge=latest)
 ![GitHub top language](https://img.shields.io/github/languages/top/tie-set/stadle-docs)
