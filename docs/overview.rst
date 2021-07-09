@@ -17,19 +17,3 @@ Our STADLE platform enhances the capability of FL by incorporating decentralized
 * Traceability: Our platform has the performance tracking capability that monitors and manages the transition of collective intelligence models in the decentralized system.
 
 Ready to get started? Great! Click here for installation steps.
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Getting Started:
-   
-   overview
-   installation
-   usage
-   guides
-   GUI
-   tables
-   tech_support
-   release_notes
-   download
-
-
