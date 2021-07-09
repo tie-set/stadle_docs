@@ -14,7 +14,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-py -3 -m pip install sphinx-rtd-dark-mode
 
 ## added this whole line
 import sphinx_rtd_theme
@@ -36,7 +35,7 @@ release = '2.0'
 # ones.
 
 ## I added this
-extensions = ["sphinx_rtd_dark_mode"]
+# extensions = ["sphinx_rtd_dark_mode"]
 
 
 # Add any paths that contain templates here, relative to this directory.
