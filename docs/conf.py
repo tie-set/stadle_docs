@@ -67,7 +67,7 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_logo = '../_static/STADLE_logo.png'
+html_logo = '../_static/STADLE_logo_white.png'
 
 ### until here
 
