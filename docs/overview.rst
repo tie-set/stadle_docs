@@ -1,4 +1,4 @@
-.. image:: ../_static/STADLE_logo.png
+.. image:: ../_static/STADLE_logo_white.png
 
 
 
