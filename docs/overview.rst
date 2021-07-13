@@ -1,7 +1,3 @@
-.. image:: ../_static/STADLE_logo_white.png
-
-
-
 Overview
 ========
 
