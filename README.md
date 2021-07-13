@@ -6,6 +6,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/tie-set/stadle-docs)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/tie-set/stadle-docs)
 ![GitHub last commit](https://img.shields.io/github/last-commit/tie-set/stadle-docs)
+![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=blue&up_message=online&url=https%3A%2F%2Ftie-set.com)
 
 # Introduction
 Our STADLE platform is a paradigm-shifting technology for adaptive and continuous learning combining privacy-preserving Machine Learning (ML) and decentralized system capability to provide scalable, versatile, and secure AI services. STADLE stands for Scalable & Traceable AI platform for Distributed LEarning.
