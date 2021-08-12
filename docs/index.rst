@@ -43,7 +43,7 @@ Contents:
 * :ref:`Installation <installation>`
 * :ref:`Usage <usage>`
 * :ref:`Documentation <documentation>`
-* :ref:`Contribution <contribution>`
+* :ref:`Contributing <contributing>`
 * :ref:`License <license>`
 * :ref:`Download <download>`
 
@@ -57,7 +57,7 @@ Contents:
    installation
    usage
    documentation
-   contribution
+   contributing
    license
    download
 
