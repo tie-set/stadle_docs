@@ -82,6 +82,6 @@ The same generated performance metrics can be viewed by running ``ops``, display
 Image Classification
 ********************
 
-This sample provides a simple example of STADLE integration with "actual" ML training. Please go to the `prototype directory` for more details.
+This sample provides a simple example of STADLE integration with "actual" ML training. Please go to the `prototype directory`_ for more details.
 
 .. _prototype directory: https://github.com/tie-set/stadle_dev/blob/master/prototypes/image_classification
