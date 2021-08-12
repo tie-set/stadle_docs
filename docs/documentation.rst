@@ -2,9 +2,10 @@ Documentation
 =============
 
 STADLE Component Specifications
--------------------------------
+*******************************
 
-**Agent**
+Agent
+-----
 
 At the agent side, it is expected that two independent processes, which communicate each other through local files, are running.
 
@@ -33,7 +34,8 @@ Note that this portion is written based on the ``minimal_MLEngine.py`` implement
   * If the ``state`` file still indicates ``training``, it saves the trained local models as a binary file and changes the state to ``sending``.
   * If the ``state`` file was updated to ``sg_ready``, it discards the trained local models and goes back to the ``sg_ready`` state. This results in another ``training`` phase at the ``MLEngine``. This scenario happens when its local training was too slow and the aggregator decided to aggregate other local models to create a new set of semi-global models. The ``MLEngine`` needs to ignore the previous round of training. It may require the reduction of training time by reducing the training cycles or batch sizes.
 
-**Aggregator**
+Aggregator
+----------
 
 **aggregation (Computational logic)**
 
@@ -53,6 +55,7 @@ Two model buffers are maintained to temporarily stores models sent to an aggrega
 * ``cluster_model_buffers``: Buffers to store cluster models pulled from database. These models are used to synthesize semi-global models. Each entry is in a shape of a dictionary entry: ``'model_name' : list of cluster models of model_name``. The key (``'model_name'``) needs to be picked from the pre-agreed list of model names. Please refer ``LimitedDict`` specification below.
 
 Models
+
 Two types of synthesized models are always kept in this module.
 
 * ``cluster_models``: A dictionary of the synthesized cluster models. Each entry is in a shape of a dictionary entry: ``'model_name' : [cluster model of model_name]``. The key (``'model_name'``) needs to be picked from the pre-agreed list of model names.
@@ -67,7 +70,8 @@ Note that an extra attention is needed to extract a model from these model varia
 
 When sending these models, the dictionary is converted so that its entry will be a shape of 'model_name' : model of model_name (The value is a model itself not a list.) for convenience at the agent and database side.
 
-**Other Data Structure**
+Other Data Structure
+--------------------
 
 **LimitedDict**
 
@@ -81,11 +85,12 @@ A ``LimitedDict`` instance is instantiated give a list of model names. When addi
 .. _config file documentation: https://github.com/tie-set/stadle_dev/tree/master/docs/_src
 
 STADLE Communication Protocols
-------------------------------
+******************************
 
 .. image:: ../_static/protocols2.png
 
-**Aggregator-Agent (AGG-AGNT)**
+Aggregator-Agent (AGG-AGNT)
+---------------------------
 
 **participate Message**
 
@@ -114,7 +119,8 @@ STADLE Communication Protocols
 * After sending the local models, the agent goes back to a state waiting for a new semi-global model and pauses its training.
 * The aggregator stores the uploaded local models in its buffers and waits for another round of cluster model aggregation until enough number of local models are uploaded by agents.
 
-**Database-Aggregator (DB-AGG)**
+Database-Aggregator (DB-AGG)
+----------------------------
 
 All communications between an aggregator and database are initiated by the aggregator.
 
@@ -136,5 +142,6 @@ All communications between an aggregator and database are initiated by the aggre
 * Database sends back a set of cluster models specified by the sublist of IDs in the ``get_models`` message.
 
 STADLE Code Documentation
+-------------------------
 
 .. _STADLE Code Documentation: https://tie-set.github.io/stadle_dev/html/
