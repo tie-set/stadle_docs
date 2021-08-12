@@ -1,7 +1,7 @@
 Usage
 =====
 
-The simplest form of STADLE example is the `minimal example <https://stadle-documentation.readthedocs.io/en/latest/usage.html#minimal-example>`. For a practical example, check out the `image classification <https://stadle-documentation.readthedocs.io/en/latest/usage.html#image-classification>`.
+The simplest form of STADLE example is the `minimal example`_. For a practical example, check out the `image classification`_.
 
 .. _minimal example: https://stadle-documentation.readthedocs.io/en/latest/usage.html#minimal-example
 .. _image classification: https://stadle-documentation.readthedocs.io/en/latest/usage.html#image-classification
