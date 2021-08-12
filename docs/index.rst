@@ -45,8 +45,8 @@ Contents:
 * :ref:`Documentation <documentation>`
 * :ref:`Contributing <contributing>`
 * :ref:`License <license>`
-* :ref:`Download <download>`
 
+Table of Contents:
 
 .. _overview:
 
@@ -59,7 +59,6 @@ Contents:
    documentation
    contributing
    license
-   download
 
 .. _installation:
 
@@ -75,48 +74,26 @@ Contents:
 
    development/index
 
-.. _guides:
+.. _documentation:
 
 .. toctree::
    :maxdepth: 3
 
    tutorials/index
 
-.. _gui:
+.. _contributing:
 
 .. toctree::
    :maxdepth: 3
 
    git/index
 
-.. _tables:
+.. _license:
 
 .. toctree::
    :maxdepth: 3
 
    contributing/index
-
-.. _tech_support:
-
-.. toctree::
-   :maxdepth: 3
-
-   testing/index
-
-.. _release_notes:
-
-.. toctree::
-   :maxdepth: 3
-
-   subsystems/index
-
-.. _download:
-
-.. toctree::
-   :maxdepth: 3
-
-   documentation/index
-
 
    Index <https://stadle-documentation.readthedocs.io/en/latest/>
 
