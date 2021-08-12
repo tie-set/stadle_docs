@@ -42,11 +42,9 @@ Contents:
 * :ref:`Overview <overview>`
 * :ref:`Installation <installation>`
 * :ref:`Usage <usage>`
-* :ref:`Guides <guides>`
-* :ref:`GUI <gui>`
-* :ref:`Tables <tables>`
-* :ref:`Tech Support <tech_support>`
-* :ref:`Release Notes <release_notes>`
+* :ref:`Documentation <documentation>`
+* :ref:`Contribution <contribution>`
+* :ref:`License <license>`
 * :ref:`Download <download>`
 
 
@@ -58,11 +56,9 @@ Contents:
    overview
    installation
    usage
-   guides
-   gui
-   tables
-   tech_support
-   release_notes
+   documentation
+   contribution
+   license
    download
 
 .. _installation:
