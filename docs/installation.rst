@@ -1,51 +1,108 @@
-Installation Instructions
-=========================
+Installation
+============
 
+We only support installing from the source as we keep the software a private content.
 
-Server Install
-**************
+Linux/Ubuntu Users
+******************
 
-**macOS**
+Please follow the installation steps for ``server``, ``agent`` and ``database``.
+
+**Install Pre-requisites**
+
+We need sqlite3 drivers and dev packages.
+
+.. code-block:: ubuntu
+
+   sudo apt-get update -y  && apt-get upgrade -y
+   sudo apt-get install -y python3 python3-dev python3-venv python3-pip \
+   git build-essential vim libncurses5-dev \
+   libncursesw5-dev sqlite3 libsqlite3-dev
+
+**Create Virtual Environment**
 
 .. code-block:: python
 
-   conda env create -n stadleenv -f ./setups/stadleenv.yaml
+   python3 -m venv ENVSTADLE
+   source ENVSTADLE/bin/activate
 
-**Linux**
+**Build Package**
+
+First upgrade pip,
 
 .. code-block:: python
 
-   conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
+   pip install --upgrade pip
 
+Then build the wheel,
 
-Note: The environment uses ```Python 3.7.4```. There are known issues for ```ipfshttpclient``` with ```Python 3.7.2 and older```.
+.. code-block:: python
 
+   python setup.py bdist_wheel
 
-User (Agent) device
+**Install Wheel**
+
+.. code-block:: python
+
+   python3 -m pip install dist/stadle-*-py3-none-any.whl \
+               --extra-index-url https://test.pypi.org/simple \
+               --no-cache-dir
+
+MacOS Users
+***********
+
+Please follow the installation steps for ``server``, ``agent`` and ``database``.
+
+**Create Virtual Environment**
+
+.. code-block:: python
+
+   python3 -m venv ENVSTADLE
+   source ENVSTADLE/bin/activate
+
+**Build Package**
+
+First upgrade pip,
+
+.. code-block:: python
+
+   pip install --upgrade pip
+
+Then build the wheel,
+
+.. code-block:: python
+
+   python setup.py bdist_wheel
+
+**Install Wheel**
+
+.. code-block:: python
+
+   python3 -m pip install dist/stadle-*-py3-none-any.whl \
+               --extra-index-url https://test.pypi.org/simple \
+               --no-cache-dir
+
+Developers
 ********************
 
-.. code-block:: shell
+When developing stadle, make sure to install the STADLE in develop mode. This mode allows the developer to observe the changes made to the code without installing STADLE each time an update is made to the source.
 
-   # macOS
-   conda env create -n stadleenv -f ./setups/stadleenv.yaml
-   # Linux
-   conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
+To do debug the application, use the following command.
 
-Database device
-***************
+.. code-block:: python
 
-.. code-block:: shell
+   python3 setup.py develop
+   
+Additionally, to include tests, install as follows.
 
-   # macOS
-   conda env create -n stadleenv -f ./setups/stadleenv.yaml
-   # Linux
-   conda env create -n stadleenv -f ./setups/stadleenv_linux.yaml
+.. code-block:: python
 
-Be sure to activate the virtual environment. 
+   pip install -e .[dev]
 
-.. code-block:: shell
+Run the test cases,
 
-   # macOS
-   conda activate stadleenv
-   # Linux
-   source activate stadleenv
+.. code-block:: python
+
+   pytest test/
+
+Note: If you are using the STADLE outside the source folder, make sure you ``copy`` the ``setups`` and ``prototypes`` folders to your workspace to test things out.
