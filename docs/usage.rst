@@ -4,11 +4,12 @@ Usage
 The simplest form of STADLE example is the minimal example. For a practical example, check out the image classification.
 
 Minimal Example
----------------
+***************
 
 This sample does not have actual training. This could be used as a template for user implementation of ML Engine.
 
-**1. PyTorch Minimal Example**
+PyTorch Minimal Example
+--------------------------
 
 This prototype is a minimal example designed to show how STADLE functionality can be tied into the model training process for Federated Learning, and to serve as verification that STADLE is successfully set up.
 
@@ -40,7 +41,8 @@ The admin agent is used to upload the model to the aggregator(s) and database fo
 
 The same generated performance metrics can be viewed by running ``ops``, displayed on the ``performance tracking`` page.
 
-**2. Tensorflow Minimal Example**
+Tensorflow Minimal Example
+-----------------------------
 
 This prototype is a minimal example designed to show how STADLE functionality can be tied into the model training process for Federated Learning, and to serve as verification that STADLE is successfully set up.
 
@@ -77,7 +79,7 @@ The same generated performance metrics can be viewed by running ``ops``, display
 .. _image classification: https://stadle-documentation.readthedocs.io/en/latest/usage.html#image-classification
 
 Image Classification
---------------------
+********************
 
 This sample provides a simple example of STADLE integration with "actual" ML training. Please go to the prototype directory for more details.
 
@@ -86,7 +88,7 @@ This sample provides a simple example of STADLE integration with "actual" ML tra
 .. _prototype directory: https://github.com/tie-set/stadle_dev/blob/master/prototypes/image_classification
 
 STADLE Component Specifications
--------------------------------
+*******************************
 
 **Agent**
 
