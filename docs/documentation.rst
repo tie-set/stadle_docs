@@ -1,6 +1,8 @@
 Documentation
 =============
 
+.. image:: ../_static/architecture_ver0-5.png
+
 STADLE Component Specifications
 *******************************
 
@@ -18,7 +20,7 @@ At the agent side, it is expected that two independent processes, which communic
 Note that this portion is written based on the ``Client2.py`` implementation.
 
 * The initialization brings an agent to the ``waiting_sgm`` state where the agent waits for the semi-global models (base models) for training. This change is conducted by the ``Client`` module. While being in this state, the agent will pause its training.
-* The arrival of the semi-global models from an aggregator changes the agent's state to ``sg_ready``. This change is conducted by the ``Client`` module. The state is communicated to ``MLEngine`` through a local ``state`` file. At the same time, the semi-global models are saved as a binary local file. The file names and local paths can be configured through the ``config.jason`` file. Please read the config file documentation.
+* The arrival of the semi-global models from an aggregator changes the agent's state to ``sg_ready``. This change is conducted by the ``Client`` module. The state is communicated to ``MLEngine`` through a local ``state`` file. At the same time, the semi-global models are saved as a binary local file. The file names and local paths can be configured through the ``config.jason`` file. Please read the `config file documentation`.
 * While being in the ``sg_ready`` and ``training`` states, ``Client`` waits for potential arrival of semi-global models. This scenario happens when its local training was too slow and the aggregator decided to aggregate other local models to create a new set of semi-global models.
   * If the new models arrives, ``Client`` changes the agent's state to ``sg_ready`` to let MLEngine to discard the current training results.
   * If not, ``Client`` waits for ``MLEngine`` finishing its training.
@@ -141,7 +143,7 @@ All communications between an aggregator and database are initiated by the aggre
 * The selected ID list is communicated by a ``get_models`` message.
 * Database sends back a set of cluster models specified by the sublist of IDs in the ``get_models`` message.
 
-STADLE Code Documentation
--------------------------
+`STADLE Code Documentation`
+---------------------------
 
 .. _STADLE Code Documentation: https://tie-set.github.io/stadle_dev/html/
