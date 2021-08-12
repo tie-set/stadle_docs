@@ -204,17 +204,21 @@ All communications between an aggregator and database are initiated by the aggre
 
 **push Message**
 
-* An aggregator send its cluster models by a push message. This message contains binary representation of a model dictionary and the cluster ID.
-* Receiving the message, database stores the pair of (cluster id, model dictionary) in its storage.
+* An aggregator send its cluster models by a ``push`` message. This message contains binary representation of a model dictionary and the cluster ID.
+* Receiving the message, database stores the pair of ``(cluster id, model dictionary)`` in its storage.
 * Database returns a confirmation message. Currently, this confirmation is not used at the aggregator.
 
 **get_list Message**
 
-* To prepare a set of cluster models for the semi-global model synthesis, an aggregator sends a get_list message.
+* To prepare a set of cluster models for the semi-global model synthesis, an aggregator sends a ``get_list`` message.
 * Database responds to it by returning a list of cluster IDs to which the database stores cluster models corresponding
 
 **get_models Message**
 
 * An aggregator decides, by sampling, a set of cluster models that it wants to pull for the semi-global model synthesis.
-* The selected ID list is communicated by a get_models message.
-* Database sends back a set of cluster models specified by the sublist of IDs in the get_models message.
+* The selected ID list is communicated by a ``get_models`` message.
+* Database sends back a set of cluster models specified by the sublist of IDs in the ``get_models`` message.
+
+STADLE Code Documentation
+
+.. _STADLE Code Documentation: https://tie-set.github.io/stadle_dev/html/
