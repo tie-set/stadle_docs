@@ -8,6 +8,8 @@ Minimal Example
 
 This sample does not have actual training. This could be used as a template for user implementation of ML Engine.
 
+.. _minimal example: https://stadle-documentation.readthedocs.io/en/latest/usage.html#minimal-example
+
 PyTorch Minimal Example
 --------------------------
 
@@ -75,14 +77,10 @@ Performance Data
 
 The same generated performance metrics can be viewed by running ``ops``, displayed on the ``performance tracking`` page.
 
-.. _minimal example: https://stadle-documentation.readthedocs.io/en/latest/usage.html#minimal-example
-.. _image classification: https://stadle-documentation.readthedocs.io/en/latest/usage.html#image-classification
-
 Image Classification
 ********************
 
 This sample provides a simple example of STADLE integration with "actual" ML training. Please go to the prototype directory for more details.
 
-.. image:: ../_static/architecture_ver0-5.png
-
+.. _image classification: https://stadle-documentation.readthedocs.io/en/latest/usage.html#image-classification
 .. _prototype directory: https://github.com/tie-set/stadle_dev/blob/master/prototypes/image_classification
