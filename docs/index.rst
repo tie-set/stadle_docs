@@ -36,6 +36,15 @@ Want to help?
 -------------
 Want to file a bug, contribute some code, or improve documentation? Excellent! Read up on our guidelines for contributing, then check out issues that are labeled Good First Issue. https://stadle-documentation.readthedocs.io/en/latest/index.html
 
+Contents:
+
+* :ref:`Overview <overview>`
+* :ref:`Installation <installation>`
+* :ref:`Usage <usage>`
+* :ref:`Documentation <documentation>`
+* :ref:`Contributing <contributing>`
+* :ref:`License <license>`
+
 Table of Contents:
 
 .. _overview:
