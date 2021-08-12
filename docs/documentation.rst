@@ -144,6 +144,6 @@ All communications between an aggregator and database are initiated by the aggre
 * Database sends back a set of cluster models specified by the sublist of IDs in the ``get_models`` message.
 
 `STADLE Code Documentation`_
-----------------------------
+****************************
 
 .. _STADLE Code Documentation: https://tie-set.github.io/stadle_dev/html/
