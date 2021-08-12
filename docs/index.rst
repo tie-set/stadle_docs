@@ -97,15 +97,18 @@ Table of Contents:
    Index <https://stadle-documentation.readthedocs.io/en/latest/>
 
 
-## Install from Source
+Install from Source
+-------------------
 
 We only support installing from the source as we keep the software a private content.
 
-### Linux/Ubuntu Users
+Linux/Ubuntu Users
+------------------
 
 Please follow the installation steps for `server`, `agent` and `database`.
 
-#### Install Pre-requisites 
+Install Pre-requisites
+----------------------
 
 We need `sqlite3` drivers and dev packages. 
 
@@ -116,14 +119,16 @@ git build-essential vim libncurses5-dev \
 libncursesw5-dev sqlite3 libsqlite3-dev
 ```
 
-#### Create Virtual Environment
+Create Virtual Environment
+--------------------------
 
 ```bash
 python3 -m venv ENVSTADLE
 source ENVSTADLE/bin/activate
 ```
 
-#### Build Package
+Build Package
+-------------
 
 First upgrade pip, 
 
@@ -137,7 +142,8 @@ Then build the wheel,
 python setup.py bdist_wheel
 ```
 
-#### Install Wheel
+Install Wheel
+-------------
 
 ```bash
 python3 -m pip install dist/stadle-*-py3-none-any.whl \
@@ -145,18 +151,21 @@ python3 -m pip install dist/stadle-*-py3-none-any.whl \
             --no-cache-dir
 ```
 
-### MacOS Users 
+MacOS Users
+-----------
 
 Please follow the installation steps for `server`, `agent` and `database`.
 
-#### Create Virtual Environment
+Create Virtual Environment
+--------------------------
 
 ```bash
 python3 -m venv ENVSTADLE
 source ENVSTADLE/bin/activate
 ```
 
-#### Build Package
+Build Package
+-------------
 
 First upgrade pip, 
 
@@ -170,7 +179,8 @@ Then build the wheel,
 python setup.py bdist_wheel
 ```
 
-#### Install Wheel
+Install Wheel
+-------------
 
 ```bash
 python3 -m pip install dist/stadle-*-py3-none-any.whl \
@@ -178,7 +188,8 @@ python3 -m pip install dist/stadle-*-py3-none-any.whl \
             --no-cache-dir
 ```
 
-### Developers
+Developers
+-----------
 
 When developing STADLE, make sure to install the STADLE in develop mode. 
 This mode allows the developers to observe the changes made to the codes without
@@ -205,25 +216,30 @@ pytest test/
 Note: If you are using the STADLE outside the source folder, make sure you `copy`
 the `setups` and `prototypes` folders to your workspace to test things out. 
 
-## Usage
+Usage
+-----
 
 The simplest form of STADLE example is the [minimal example](#minimal-example).
 For a practical example, check out the [image classification](#image-classification-application). 
 
-### Minimal Example
+Minimal Example
+---------------
 
 This sample does not have actual training. This could be used as a template for user implementation of ML Engine.
 
 1. [PyTorch Minimal Example](prototypes/sample/minimal_pt/README.md)
 2. [Tensorflow Minimal Example](prototypes/sample/minimal_tf/README.md)
 
-### [Image Classification Application](prototypes/sample/image_classification/README.md)
+[Image Classification Application](prototypes/sample/image_classification/README.md)
+------------------------------------------------------------------------------------
 
 This sample provides a simple example of STADLE integration with "actual" ML training. 
 Please go to [the prototype directory](prototypes/image_classification) for more details.
 
 
-## Documentation
+Documentation
+-------------
+
 ![Architecture](docs/_src/_static/architecture_ver0-5.png)
 
 - [STADLE component specification ](docs/_src/specs.md)
@@ -231,19 +247,25 @@ Please go to [the prototype directory](prototypes/image_classification) for more
 - [STADLE code documentation](https://tie-set.github.io/stadle_dev/)
 
 
-## Contributing
+Contributing
+------------
 
 Reach out with your issues or proposals to improve STADLE. 
 
-### Bug Reports
+Bug Reports
+------------
+
 
 Please check/submit issues [here](https://github.com/tie-set/ts_afl/issues).
 
-### Tech Support
+Tech Support
+-------------
 
 Please reach out to our technical support team via [support@tie-set.com](support@tie-set.com).
 
-## License
+License
+--------
+
 
 Any use and distribution of this code must be under the NDA with [TieSet Inc.](https://tie-set.com/)
 
