@@ -12,7 +12,7 @@ Please follow the installation steps for ``server``, ``agent`` and ``database``.
 
 We need sqlite3 drivers and dev packages.
 
-.. code-block:: ubuntu
+.. code-block:: powershell
 
    sudo apt-get update -y  && apt-get upgrade -y
    sudo apt-get install -y python3 python3-dev python3-venv python3-pip \
