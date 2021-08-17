@@ -34,8 +34,10 @@ release = '2.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-## I added this
-
+# Remove border around code-block
+latex_elements = {
+    'sphinxsetup': 'verbatimwithframe=false',
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
