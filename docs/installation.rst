@@ -44,7 +44,7 @@ Then build the wheel,
 
 .. code-block:: python
 
-   python3 -m pip install dist/stadle-*-py3-none-any.whl \
+   python -m pip install dist/stadle-*-py3-none-any.whl \
                --extra-index-url https://test.pypi.org/simple \
                --no-cache-dir
 
@@ -57,7 +57,7 @@ Please follow the installation steps for ``server``, ``agent`` and ``database``.
 
 .. code-block:: python
 
-   python3 -m venv ENVSTADLE
+   python -m venv ENVSTADLE
    source ENVSTADLE/bin/activate
 
 **Build Package**
@@ -78,7 +78,7 @@ Then build the wheel,
 
 .. code-block:: python
 
-   python3 -m pip install dist/stadle-*-py3-none-any.whl \
+   python -m pip install dist/stadle-*-py3-none-any.whl \
                --extra-index-url https://test.pypi.org/simple \
                --no-cache-dir
 
@@ -91,7 +91,7 @@ To do debug the application, use the following command.
 
 .. code-block:: python
 
-   python3 setup.py develop
+   python setup.py develop
    
 Additionally, to include tests, install as follows.
 
