@@ -23,7 +23,7 @@ We need sqlite3 drivers and dev packages.
 
 .. code-block:: python
 
-   python3 -m venv ENVSTADLE
+   python -m venv ENVSTADLE
    source ENVSTADLE/bin/activate
 
 **Build Package**
