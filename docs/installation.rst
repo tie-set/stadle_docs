@@ -10,15 +10,6 @@ Please follow the installation steps for ``server``, ``agent`` and ``database``.
 
 **Install Pre-requisites**
 
-We need sqlite3 drivers and dev packages.
-
-.. code-block:: powershell
-
-   sudo apt-get update -y  && apt-get upgrade -y
-   sudo apt-get install -y python3 python3-dev python3-venv python3-pip \
-   git build-essential vim libncurses5-dev \
-   libncursesw5-dev sqlite3 libsqlite3-dev
-
 **Create Virtual Environment**
 
 .. code-block:: python

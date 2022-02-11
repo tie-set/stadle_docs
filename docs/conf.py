@@ -65,14 +65,14 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_logo = '../_static/STADLE_logo_white.png'
+html_logo = '../_static/STADLE_logo_white_nameless.jpg'
 
 ### until here
 
 # html_css_files = ["css/toggle.css"]
 
 html_css_files = [
-    'css/rtd_dark.css',
+    'css/style.css',
 ]
 
 html_js_files = ["js/matomo.js", "js/toggle.js"]
