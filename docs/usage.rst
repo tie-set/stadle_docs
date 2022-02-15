@@ -603,6 +603,7 @@ Use the same CIFAR-10 datasets as the local training example
 .. code-block::
 	:linenos:
 
+
 	stadle_client.set_termination_function(judge_termination, round_to_exit=20, client=stadle_client)
 
     stadle_client.set_training_function(train, trainloader, lr=args.lr, epochs=args.lt_epochs, device=device, agent_name=args.agent_name)
