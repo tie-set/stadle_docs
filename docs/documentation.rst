@@ -149,7 +149,7 @@ All communications between an aggregator and database are initiated by the aggre
 BasicClient
 -----------
 
-.. py:function:: BasicClient(config_file: str = None,\
+.. function:: BasicClient(config_file: str = None,\
                  simulation_flag=True,\
                  aggregator_ip_address: str = None,\
                  reg_socket: str = None,\
