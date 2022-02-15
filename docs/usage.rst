@@ -22,8 +22,8 @@ The persistence server can be configured with a config file by including the pat
 ::
 
 	stadle persistence-server --config_file /path/to/config/file.json
-Specific parameters can also be set using command line arguments - refer to :ref:`Documentation` for details
-on the config file parameters and the respective accepted command line arguments for the persistence server.
+Specific parameters can also be set using command line arguments - refer to :ref:`Config File Documentation` for details
+on the config file parameters, and run ``stadle persistence-server --help`` to see the accepted command line arguments for the persistence server.
 
 
 The second STADLE-side component is the **aggregator** - as the name suggests, this component is in charge of collecting
@@ -35,8 +35,8 @@ command:
 ::
 
 	stadle aggregator --config_file /path/to/config/file.json
-Specific parameters can be set using command line arguments - refer to :ref:`Documentation` for details
-on the config file parameters and the respective accepted command line arguments for the aggregator.
+Specific parameters can be set using command line arguments - refer to :ref:`Config File Documentation` for details
+on the config file parameters, and run ``stadle aggregator --help`` to see the accepted command line arguments for the aggregator.
 
 Client-side STADLE Integration
 ==============================
@@ -201,7 +201,7 @@ BasicClient can be set by passing a config file path through the constructor
 
 Alternatively, specific config parameter values can be set directly with the
 BasicClient constructor.  Information on the config file and these parameters,
-as well as all subsequent function calls, can be found at :ref:`Documentation`.
+as well as all subsequent function calls, can be found at :ref:`Client API Documentation`.
 
 Step 2: Connect BasicClient to STADLE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -322,7 +322,7 @@ The BasicClient object can then be created and configured like the BasicClient:
 
 Alternatively, specific config parameter values can be set directly with the
 IntegratedClient constructor.  Information on the config file and these parameters,
-as well as all subsequent function calls, can be found at :ref:`Documentation`.
+as well as all subsequent function calls, can be found at :ref:`Client API Documentation`.
 
 Step 2: Construct Local Training Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -572,7 +572,6 @@ start the FL process:
 	:linenos:
 
 	parser = argparse.ArgumentParser(description='STADLE CIFAR10 Training')
-
     parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
     parser.add_argument('--lt_epochs', default=3)
 
@@ -603,9 +602,7 @@ Use the same CIFAR-10 datasets as the local training example
 .. code-block::
 	:linenos:
 
-
 	stadle_client.set_termination_function(judge_termination, round_to_exit=20, client=stadle_client)
-
     stadle_client.set_training_function(train, trainloader, lr=args.lr, epochs=args.lt_epochs, device=device, agent_name=args.agent_name)
     stadle_client.set_cross_validation_function(cross_validate, testloader, device=device)
     stadle_client.set_testing_function(test, testloader)
@@ -655,7 +652,6 @@ The specific BaseModel object is then created with the VGG16 model structure and
 	:linenos:
 
 	args = admin_arg_parser()
-
     admin_agent = AdminAgent(config_file=args.config_path, simulation_flag=args.simulation,
                              aggregator_ip_address=args.ip_address, reg_socket=args.reg_port,
                              exch_socket=args.exch_port, model_path=args.model_path, base_model=base_model,
