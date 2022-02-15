@@ -143,149 +143,34 @@ All communications between an aggregator and database are initiated by the aggre
 * The selected ID list is communicated by a ``get_models`` message.
 * Database sends back a set of cluster models specified by the sublist of IDs in the ``get_models`` message.
 
-`STADLE Code Documentation`_
+`Client API Documentation`_
 ****************************
 
-.. _STADLE Code Documentation: https://tie-set.github.io/stadle_dev/html/
+BasicClient
+-----------
 
-Database (PseudoDB)
--------------------
+.. py:function:: BasicClient(config_file: str = None,\
+                 simulation_flag=True,\
+                 aggregator_ip_address: str = None,\
+                 reg_socket: str = None,\
+                 exch_socket: str = None,\
+                 model_path: str = None,\
+                 agent_running: bool = True)
 
-In addition to the command line instantiation (``python -m stadle.pseudodb.pseudo_db`` + command line arguments), the backend database container can be created and started within Python code.
+    Test format
 
-PseudoDB::
-^^^^^^^^^^^^^^^^^^^^^^^^
-    PseudoDB(
-        config_file: str = None,
-        simulation_flag=None,
-        db_server_ip_address: str = None,
-        db_socket: str = None,
-        db_name: str = None,
-        data_path: str = None,
-        db_model_path: str = None,
-        db_token: str = None
-    )
+    :param config_file: Specifies the path of the aggregator config file to read parameter values from, if not provided in the respective constructor parameter. Defaults to value of agent_config_path environmental variable (normally set to setups/config_agent.json) if no path is provided.
+    :param simulation_flag: Determines if client should operate in simulation mode for testing, or production mode; simulation mode uses the default aggregator token and displays debug information at runtime.
+    :param aggregator_ip_address: IP address of the aggregator instance to connect to.
+    :param reg_socket: Port to be used to create socket for registering through aggregator.
+    :param exch_socket: *Deprecated*
+    :param model_path: Path to folder used for local storage (client state, id, local and sg models).
+    :param agent_running: Flag to determine if agent should actively participate in model exchange with aggregator.
 
-Constructor for PseudoDB object
+    :return: Configured BasicClient object
 
-**Parameters**
-#. ``config_file`` - Specifies the path of the PseudoDB config file to read parameter values from, if not provided in the respective constructor parameter.  Defaults to value of ``db_server_config_path`` environmental variable (normally set to ``setups/config_db.json``) if no path is provided.
-#. ``simulation_flag`` - Determines if PseudoDB should operate in simulation mode for testing, or production mode; this affects what information will be displayed at runtime.
-#. ``db_server_ip_address`` - IP address of the instance running the PseudoDB.
-#. ``db_socket`` - Port to be exposed for receiving messages from aggregator(s).
-#. ``db_name`` - Name of DB file to be read from.
-#. ``data_path`` - Path to folder containing DB file.  Will be recursively created if it does not exist.
-#. ``db_model_path`` - Path to folder containing all stored model weights.
-#. ``db_token`` - Token used to verify validity of connecting aggregator(s).
+`STADLE CLI Documentation`_
+****************************
 
-**Returns**
-``PseudoDB`` object with parameters either set from constructor or read from config file.
-
-
-start_db_server()::
-^^^^^^^^^^^^^^^^^^^
-    start_db_server()
-
-Opens communication socket and starts DB handler to process requests from connected aggregators
-
-
-
-Aggregator (Server)
--------------------
-
-In addition to the command line instantiation (``python -m stadle.aggregator.server_th`` + command line arguments), aggregators can be created and started within Python code.
-
-Server::
-^^^^^^^^^^^^^^^^^^^^^^^^
-    Server(
-        config_file=None,
-        simulation_flag=None,
-        aggregator_ip_address=None,
-        dp_server_ip_address=None,
-        aggregation_threshold=None,
-        round_interval=None,
-        sample_size=None,
-        is_sampling=None,
-        project_id=None,
-        aggr_token=None,
-        db_token=None,
-        reg_socket=None,
-        recv_socket=None,
-        aggr_data_path=None,
-        exch_socket=None
-    )
-
-Constructor for Server object (aggregator)
-
-**Parameters**
-#. ``config_file`` - Specifies the path of the aggregator config file to read parameter values from, if not provided in the respective constructor parameter.  Defaults to value of ``aggregate_config_path`` environmental variable (normally set to ``setups/config_aggregator.json``) if no path is provided.
-#. ``simulation_flag`` - Determines if aggregator should operate in simulation mode for testing, or production mode; simulation mode uses the default DB token and displays debug information at runtime.
-#. ``aggregator_ip_address`` - IP address of this aggregator instance.
-#. ``db_server_ip_address`` - IP address of the PseudoDB instance to connect to.
-#. ``aggregation_threshold`` - Threshold value of ``(number of received models)/(number of connected agents)`` that must be reached before the round ends and aggregation begins.
-#. ``round_interval`` - Delay between subsequent polling messages/aggregation condition checks.
-#. ``sample_size`` - Number of cluster models to be sampled when creating semi-global model.
-#. ``is_sampling`` - If cluster models should be sampled, or all used when creating semi-global model.
-#. ``project_id`` - ID of project that the aggregator is assigned to.
-#. ``aggr_token`` - Token used to verify validity of connecting clients.
-#. ``db_token`` - Token used to connect to PseudoDB.
-#. ``reg_socket`` - Port exposed for clients to use for registration through the aggregator.
-#. ``recv_socket`` - Port exposed for clients to communicate with aggregator.
-#. ``aggr_data_path`` - Path to folder used for local storage (currently storing aggregator id).
-#. ``exch_socket`` - *Deprecated*
-
-**Returns**
-``Server`` object with parameters either set from constructor or read from config file.
-
-start_fl_server()::
-^^^^^^^^^^^^^^^^^^^^^^^^
-    start_fl_server()
-
-Initiates communication with PseudoDB (polling + requests), and opens socket to receive messages from connected clients.
-
-show_server_th_states()::
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    show_server_th_states()
-
-Displays current value of aggregator parameters through ``logging`` module.
-
-
-Client
---------
-
-The Client object acts as an interface between the MLEngine code produced by the user and STADLE functionality.
-It can be used to manage the federated training process at various levels of complexity.
-
-Client::
-^^^^^^^^^^^^^^^^^^
-    Client(
-        config_file: str = None,
-        simulation_flag=None,
-        aggregator_ip_address: str = None,
-        reg_socket: str = None,
-        exch_socket: str = None,
-        model_path: str = None,
-        agent_running: bool = False
-    )
-
-Constructor for Client object
-
-**Parameters**
-#. ``config_file`` - Specifies the path of the aggregator config file to read parameter values from, if not provided in the respective constructor parameter.  Defaults to value of ``agent_config_path`` environmental variable (normally set to ``setups/config_agent.json``) if no path is provided.
-#. ``simulation_flag`` - Determines if client should operate in simulation mode for testing, or production mode; simulation mode uses the default aggregator token and displays debug information at runtime.
-#. ``aggregator_ip_address`` - IP address of the aggregator instance to connect to.
-#. ``reg_socket`` - Port to be used to create socket for registering through aggregator.
-#. ``exch_socket`` - *Deprecated*
-#. ``model_path`` - Path to folder used for local storage (client state, id, local and sg models).
-#. ``agent_running`` - Flag to determine if agent should actively participate in model exchange with aggregator.
-
-**Returns**
-``Client`` object with parameters either set from constructor or read from config file.
-
-set_exch_active()::
-^^^^^^^^^^^^^^^^^^^
-    set_exch_active(
-        exch_active_flag: bool
-    )
-
-``exch_active`` - Sets ``exch_active`` flag in client, which determines if client should be considered 'active' by aggregator for aggregation purposes.
+`Config File Documentation`_
+****************************

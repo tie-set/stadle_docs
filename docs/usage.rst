@@ -614,8 +614,8 @@ Pass functions to IntegratedClient for use in internal training loop
 .. code-block::
 	:linenos:
 
-	basic_client.set_bm_obj(model)
-    basic_client.start()
+	stadle_client.set_bm_obj(model)
+    stadle_client.start()
 
 Set the container model for the client, then start the agent FL process
 
