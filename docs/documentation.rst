@@ -170,23 +170,24 @@ BasicClient
 
     :return: Configured BasicClient object
 
-.. function:: stadle.BasicClient.connect(model)
-
-    Open connection to configured aggregator and get most recent aggregated model.
-
-    :param model: Used as a container to store aggregated model weights (for ease of use in local training).
-
 .. function:: stadle.BasicClient.send_trained_model(model)
 
     Extract weights from locally-trained model and send weights to aggregator.
 
     :param model: Locally-trained model to extract weights from.
+    :return: False if new aggregated model was received during local training process (nothing sent in this case), True otherwise
 
 .. function:: stadle.BasicClient.wait_for_sg_model()
 
     Blocking function that waits to receive the aggregated model from the aggregator.
 
     :return: Model object with aggregated weights from previous round.
+
+.. function:: stadle.BasicClient.set_bm_obj(model)
+
+    Set container model object in IntegratedClient for use when converting to/from agnostic format.
+
+    :param model: Used as a container to store aggregated model weights (for ease of use in local training).
 
 .. function:: stadle.BasicClient.disconnect()
 
