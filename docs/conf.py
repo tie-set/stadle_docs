@@ -21,7 +21,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'STADLE'
-copyright = '2021, TieSet'
+copyright = '2022, TieSet'
 author = 'Kiyoshi Nakayama and Anthony Maddalone'
 
 # The full version, including alpha/beta/rc tags
