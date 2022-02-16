@@ -21,7 +21,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'STADLE'
-copyright = '2021, TieSet'
+copyright = '2022, TieSet'
 author = 'Kiyoshi Nakayama and Anthony Maddalone'
 
 # The full version, including alpha/beta/rc tags
@@ -53,6 +53,7 @@ html_static_path = ['_static']
 #
 html_theme = 'sphinx_rtd_theme'
 
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -65,7 +66,7 @@ html_theme_options = {
     'logo_only': True,
 }
 
-html_logo = '../_static/STADLE_logo_white_nameless.jpg'
+html_logo = '../_static/STADLE_logo_white.png'
 
 ### until here
 
