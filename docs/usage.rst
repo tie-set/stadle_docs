@@ -237,14 +237,13 @@ training code:
 
 	for epoch in range(num_epochs):
 		print('\nEpoch: %d' % (epoch + 1))
-
 		"""
 		Addition for STADLE integration
 		"""
 		if (epoch % 2 == 0):
 			# Don't send model at beginning of training
             if (epoch != 0):
-                stadle_client.send_trained_model(agent.target_net)
+                stadle_client.send_trained_model(model)
 
             sg_model_dict = stadle_client.wait_for_sg_model()
 
