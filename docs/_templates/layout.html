@@ -1,102 +1,127 @@
 {% extends "!layout.html" %}
-  {% block footer %} {{ super() }}
+{% block footer %} {{ super() }}
 
-  <style>
-    /* Sidebar header (and topbar for mobile) */
-    .wy-side-nav-search, .wy-nav-top {
-      background: #225CCB;
-    }
-    /* Sidebar */
-    .wy-nav-side {
-      background: #225CCB;
-    }
+<style>
+  /* Sidebar header (and topbar for mobile) */
+  .wy-side-nav-search,
+  .wy-nav-top {
+    background: #2980B9;
+  }
 
-    pre {
-	  background-color: #ddd; !important;
-    }
+  /* Sidebar */
+  .wy-nav-side {
+    background: #2980B9;
+  }
 
-    .wy-nav-content {
-	  background: #fff;
-	  color: black;
-    }
+  pre {
+    background-color: #ddd !important;
+  }
 
-    .method dt, .class dt, .data dt, .attribute dt, .function dt,
-	  .descclassname, .descname {
-	  background-color: #43474f !important;
-	  color: white !important;
-    }
+  .wy-nav-content {
+    background: #fff;
+    color: black;
+  }
 
-    .toc-backref {
-	  color: #43474f !important;
-    }
+  .method dt,
+  .class dt,
+  .data dt,
+  .attribute dt,
+  .function dt,
+  .descclassname,
+  .descname {
+    background-color: #43474f !important;
+    color: white !important;
+  }
 
-    code.literal {
-	  background-color: #ffffff !important;
-	  border: #43474f
-    }
+  .toc-backref {
+    color: #43474f !important;
+  }
 
-    .wy-nav-content-wrap {
-	  background-color: #fff !important;
-    }
+  code.literal {
+    background-color: #ffffff !important;
+    border: #43474f
+  }
 
-    .sidebar {
-	  background-color: #43474f !important;
-    }
+  .wy-nav-content-wrap {
+    background-color: #fff !important;
+  }
 
-    .sidebar-title {
-	  background-color: #ffffff !important;
-    }
+  .sidebar {
+    background-color: #43474f !important;
+  }
 
-    .xref, .py-meth {
-	  color: #FDEDC3 !important;
-    }
+  .sidebar-title {
+    background-color: #ffffff !important;
+  }
 
-    .admonition, .note {
-	  background-color: #ffffff !important;
-    }
+  .xref,
+  .py-meth {
+    color: #FDEDC3 !important;
+  }
 
-    .wy-side-nav-search {
-	  background-color: #333;
-    }
-    
-    .highlight-powershell pre {
+  .admonition,
+  .note {
+    background-color: #ffffff !important;
+  }
+
+  .wy-side-nav-search {
+    background-color: #333;
+  }
+
+  .highlight-powershell pre {
     background: #FDEDC3;
-    }
-    
-    .highlight-python pre {
-    background: #FDEDC3;
-    }
-	  
-    .highlight-bash pre {
-    background: #FDEDC3;
-    }
+  }
 
-    .code_highlight {
+  .highlight-python pre {
+    background: #FDEDC3;
+  }
+
+  .highlight-bash pre {
+    background: #FDEDC3;
+  }
+
+  .code_highlight {
     border: #FDEDC3;
-    }
-    
-    .wy-table thead, .rst-content table.docutils thead, .rst-content table.field-list thead {
+  }
+
+  .wy-table thead,
+  .rst-content table.docutils thead,
+  .rst-content table.field-list thead {
     background-color: #43474f;
     border: solid 1px #000000;
-    }
+  }
 
-    .wy-table thead th, .rst-content table.docutils thead th, .rst-content table.field-list thead th {
+  .wy-table thead th,
+  .rst-content table.docutils thead th,
+  .rst-content table.field-list thead th {
     background-color: #43474f;
     border: 1px solid #000000;
-    }
+  }
 
-    .wy-table thead p, .rst-content table.docutils thead p, .rst-content table.field-list thead p {
+  .wy-table thead p,
+  .rst-content table.docutils thead p,
+  .rst-content table.field-list thead p {
     margin: 0;
     background-color: #43474f;
     border: 1px solid #000000;
-    }
+  }
 
-    .wy-table-odd td, .wy-table-striped tr:nth-child(2n-1) td, .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
+  .wy-table-odd td,
+  .wy-table-striped tr:nth-child(2n-1) td,
+  .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td {
     background-color: #43474f;
     border: 1px solid #000000;
-    }
+  }
 
-    .highlight .m { color: inherit } /* Literal.Number */
-    .highlight .nv { color: #DDF5D9 } /* Name.Variable */
-  </style>
+  .highlight .m {
+    color: inherit
+  }
+
+  /* Literal.Number */
+  .highlight .nv {
+    color: #DDF5D9
+  }
+
+  /* Name.Variable */
+</style>
 {% endblock %}
