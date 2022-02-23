@@ -602,9 +602,7 @@ and define model to be trained.
 
 Use the same CIFAR-10 datasets as the local training example
 
-.. code-block:: python
-	:linenos:
-
+.. code-block:: 
 	stadle_client.set_termination_function(judge_termination, round_to_exit=20, client=stadle_client)
     stadle_client.set_training_function(train, trainloader, lr=args.lr, epochs=args.lt_epochs, device=device, agent_name=args.agent_name)
     stadle_client.set_cross_validation_function(cross_validate, testloader, device=device)
