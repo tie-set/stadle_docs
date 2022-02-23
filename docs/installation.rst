@@ -12,7 +12,7 @@ Please follow the installation steps for ``server``, ``agent`` and ``database``.
 
 **Create Virtual Environment**
 
-::
+.. code-block:: python
 
    python -m venv ENVSTADLE
    source ENVSTADLE/bin/activate
