@@ -143,8 +143,8 @@ All communications between an aggregator and database are initiated by the aggre
 * The selected ID list is communicated by a ``get_models`` message.
 * Database sends back a set of cluster models specified by the sublist of IDs in the ``get_models`` message.
 
-`Client API Documentation`_
-****************************
+Client API Documentation
+******************
 
 BasicClient
 -----------
