@@ -17,11 +17,13 @@ can be started with the following command:
 ::
 
 	stadle persistence-server
+
 The persistence server can be configured with a config file by including the path to the file as an argument:
 
 ::
 
 	stadle persistence-server --config_file /path/to/config/file.json
+
 Specific parameters can also be set using command line arguments - refer to :ref:`Config File Documentation` for details
 on the config file parameters, and run ``stadle persistence-server --help`` to see the accepted command line arguments for the persistence server.
 
@@ -35,6 +37,7 @@ command:
 ::
 
 	stadle aggregator --config_file /path/to/config/file.json
+	
 Specific parameters can be set using command line arguments - refer to :ref:`Config File Documentation` for details
 on the config file parameters, and run ``stadle aggregator --help`` to see the accepted command line arguments for the aggregator.
 
@@ -61,6 +64,7 @@ The following is a breakdown of the PyTorch code serving as the example DL proce
 	import torchvision.transforms as transforms
 
 	from vgg import VGG
+	
 This section imports ``sys`` and the requisite PyTorch libraries for future use.  In addition, a predefined VGG model is imported from
 the model definition file.
 
@@ -598,14 +602,14 @@ and define model to be trained.
 
 Use the same CIFAR-10 datasets as the local training example
 
-.. code-block::
+.. code-block:: python
 	:linenos:
 
 	stadle_client.set_termination_function(judge_termination, round_to_exit=20, client=stadle_client)
     stadle_client.set_training_function(train, trainloader, lr=args.lr, epochs=args.lt_epochs, device=device, agent_name=args.agent_name)
     stadle_client.set_cross_validation_function(cross_validate, testloader, device=device)
     stadle_client.set_testing_function(test, testloader)
-
+	
 Pass functions to IntegratedClient for use in internal training loop
 
 .. code-block::
