@@ -1,12 +1,11 @@
-*****
 Usage
-*****
+=============
 
 This section covers the requisite steps for integrating STADLE with a basic deep learning training process.
 Please refer to :ref:`Installation` to set up the virtual environment used to run STADLE.
 
 Running Server-Side STADLE Components
-=====================================
+*******************************
 
 There are two main STADLE-side components that must be running to manage a federated learning process.
 

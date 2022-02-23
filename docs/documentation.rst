@@ -269,5 +269,5 @@ IntegratedClient
     Start FL process defined by functions passed to IntegratedClient.  STADLE then manages both the client-side and server-side of FL.
 
 
-`Config File Documentation`_
-****************************
+Config File Documentation
+******************
