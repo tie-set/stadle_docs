@@ -6,7 +6,7 @@ Overview of STADLE
 Our STADLE is a paradigm-shifting intelligence centric platform for federated, collaborative, and continuous learning.
 STADLE stands for Scalable Traceable Adaptive Distributed Learning platform.
 
-Federated learning, the core capability of STADLE, continuously collects Machine Learning models from distributed devices or clients,
+In particular, Federated learning, the core capability of STADLE, continuously collects Machine Learning models from distributed devices or clients,
 aggregates the collective intelligence, and bring it back to the local devices.
 Therefore, Federated Learning (FL) using our STADLE solves the fundamental problems that commonly appear in ML systems such as
 
@@ -17,7 +17,7 @@ Therefore, Federated Learning (FL) using our STADLE solves the fundamental probl
 
 Our STADLE platform is horizontally designed and enhances the capability of FL.
 
-- **Scalability**: Decentralized FL servers in STADLE realizes the load-balancing to accommodate more users.
+- **Scalability**: Decentralized FL servers in STADLE realizes the load-balancing to accommodate more users and create semi-global models which does not require a central master aggregator node.
 - **Traceability**: Our platform has the performance tracking capability that monitors and manages the transition of collective intelligence models in the decentralized system.
 - **Adaptability**: Static intelligence procduced by big data systems gets outdated and underperform easily while the adaptive intelligence is created by a well designed distributd resilient learning framework that perfectly sync up the local and global models.
 
