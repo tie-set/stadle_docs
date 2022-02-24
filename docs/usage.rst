@@ -594,7 +594,7 @@ and define model to be trained.
 Use the same CIFAR-10 datasets as the local training example
 
 .. code-block::
-	:linenos:
+    :linenos:
 
 	stadle_client.set_termination_function(judge_termination, round_to_exit=20, client=stadle_client)
     stadle_client.set_training_function(train, trainloader, lr=args.lr, epochs=args.lt_epochs, device=device, agent_name=args.agent_name)
@@ -644,7 +644,7 @@ The specific BaseModel object is then created with the VGG16 model structure and
 .. code-block::
 	:linenos:
 
-	args = admin_arg_parser()
+    args = admin_arg_parser()
     admin_agent = AdminAgent(config_file=args.config_path, simulation_flag=args.simulation,
                              aggregator_ip_address=args.ip_address, reg_socket=args.reg_port,
                              exch_socket=args.exch_port, model_path=args.model_path, base_model=base_model,
