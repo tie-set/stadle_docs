@@ -35,21 +35,16 @@ There are 3 main components in STADLE.
 
 - Aggregator
 
-  - A core functionality which helps aggregation process.
+  - A core FL server functionality that conducts aggregation process.
   - Packaged as a command inside `stadle` library.
-    - `stadle aggregator [args]`
-
-- Client
-
-  - A core functionality which helps executing the machine learning code from client side.
-  - Packaged inside `stadle` library as a class.
-    - `from stadle import BasicClient`
-    - `class BasicClient` is used to let `stadle` know that the following code is going to be ML.
+  - `stadle aggregator [args]`
 
 - Agent
 
+  - A core functionality and libraries that help integrating the local ML engine and/or models into the STADLE platform.
   - In charge of communicating with `stadle` core functions.
-  - Let's `stadle` know which agent is trying to aceess and perform actions.
-  - Helpful in restricting access to malicious actors.
+  - Packaged inside `stadle` library as a class.
+  - `from stadle import BasicClient / IntegratedClient`
+  - `class BasicClient / IntegratedClient` is used to integrate training, testing, validation functions of the local ML process.
 
 Ready to get started? Great! Click here for installation steps.
