@@ -14,4 +14,34 @@ Our STADLE platform enhances the capability of FL by incorporating decentralized
 * 5G-friendliness: The delay in communication to obtain collective intelligence can be dramatically reduced by employing decentralized FL servers located at edge servers.
 * Traceability: Our platform has the performance tracking capability that monitors and manages the transition of collective intelligence models in the decentralized system.
 
+General Terminologies
+*********************
+
+There are 3 main components in STADLE.
+
+- Persistence-server
+
+  - A core functionality which helps in keeping track of various database entries.
+  - Packaged as a command inside `stadle` library.
+  - `stadle persistence-server [args]`
+
+- Aggregator
+
+  - A core functionality which helps aggregation process.
+  - Packaged as a command inside `stadle` library.
+    - `stadle aggregator [args]`
+
+- Client
+
+  - A core functionality which helps executing the machine learning code from client side.
+  - Packaged inside `stadle` library as a class.
+    - `from stadle import BasicClient`
+    - `class BasicClient` is used to let `stadle` know that the following code is going to be ML.
+
+- Agent
+
+  - In charge of communicating with `stadle` core functions.
+  - Let's `stadle` know which agent is trying to aceess and perform actions.
+  - Helpful in restricting access to malicious actors.
+
 Ready to get started? Great! Click here for installation steps.
