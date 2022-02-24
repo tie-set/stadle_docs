@@ -89,9 +89,4 @@ Table of Contents:
 
 .. _license:
 
-.. toctree::
-   :maxdepth: 3
 
-   contributing/index
-
-   Index <https://stadle-documentation.readthedocs.io/en/latest/>
