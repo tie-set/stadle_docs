@@ -13,17 +13,14 @@ The first is the **persistence server** - this component is in charge of managin
 FL-specific data generated while using STADLE.  With the STADLE virtual environment active, the persistence server
 can be started with the following command:
 
-.. code-block::
-    :linenos:
-	stadle persistence-server
+::
 
+	stadle persistence-server
 The persistence server can be configured with a config file by including the path to the file as an argument:
 
+::
 
-.. code-block::
-    :linenos:
 	stadle persistence-server --config_file /path/to/config/file.json
-
 Specific parameters can also be set using command line arguments - refer to :ref:`Config File Documentation` for details
 on the config file parameters, and run ``stadle persistence-server --help`` to see the accepted command line arguments for the persistence server.
 
@@ -34,8 +31,8 @@ communicates with the persistence server to aggregate a sample of cluster models
 sent back to the clients for the next round of local training.  Similarly, the aggregator can be started with the following
 command:
 
-.. code-block::
-    :linenos:
+::
+
 	stadle aggregator --config_file /path/to/config/file.json
 Specific parameters can be set using command line arguments - refer to :ref:`Config File Documentation` for details
 on the config file parameters, and run ``stadle aggregator --help`` to see the accepted command line arguments for the aggregator.
@@ -52,7 +49,8 @@ Local Training Code
 The following is a breakdown of the PyTorch code serving as the example DL process:
 
 .. code-block::
-    :linenos:
+	:linenos:
+
 	import sys
 
 	import torch
@@ -66,7 +64,8 @@ This section imports ``sys`` and the requisite PyTorch libraries for future use.
 the model definition file.
 
 .. code-block::
-    :linenos:
+	:linenos:
+
 	transform_train = transforms.Compose([
 	    transforms.RandomCrop(32, padding=4),
 	    transforms.RandomHorizontalFlip(),
@@ -570,11 +569,15 @@ start the FL process:
 
 .. code-block::
 	:linenos:
+
 	parser = argparse.ArgumentParser(description='STADLE CIFAR10 Training')
     parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
     parser.add_argument('--lt_epochs', default=3)
+
 	args = parser.parse_args()
+
     device = 'cuda'
+
 	model = VGG('VGG16')
 
 Read in learning rate and number of local training epochs from command line arguments, set training device
@@ -582,10 +585,12 @@ and define model to be trained.
 
 .. code-block::
 	:linenos:
+
 	trainset = torchvision.datasets.CIFAR10(
 		root='data', train=True, download=True, transform=transform_train)
 	trainloader = torch.utils.data.DataLoader(
 		trainset, batch_size=64, shuffle=True, num_workers=2)
+
 	testset = torchvision.datasets.CIFAR10(
 		root='data', train=False, download=True, transform=transform_test)
 	testloader = torch.utils.data.DataLoader(
@@ -605,7 +610,8 @@ Pass functions to IntegratedClient for use in internal training loop
 
 .. code-block::
 	:linenos:
-    stadle_client.set_bm_obj(model)
+
+	stadle_client.set_bm_obj(model)
     stadle_client.start()
 
 Set the container model for the client, then start the agent FL process
@@ -649,6 +655,7 @@ The specific BaseModel object is then created with the VGG16 model structure and
                              aggregator_ip_address=args.ip_address, reg_socket=args.reg_port,
                              exch_socket=args.exch_port, model_path=args.model_path, base_model=base_model,
                              agent_running=args.agent_running)
+
     admin_agent.preload()
     admin_agent.initialize()
 
