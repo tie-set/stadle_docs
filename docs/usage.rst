@@ -5,7 +5,7 @@ This section covers the requisite steps for integrating STADLE with a basic deep
 Please refer to :ref:`Installation` to set up the virtual environment used to run STADLE.
 
 Running Server-Side STADLE Components
-*******************************
+**************************************
 
 There are two main STADLE-side components that must be running to manage a federated learning process.
 
@@ -41,7 +41,7 @@ Specific parameters can be set using command line arguments - refer to :ref:`Con
 on the config file parameters, and run ``stadle aggregator --help`` to see the accepted command line arguments for the aggregator.
 
 Client-side STADLE Integration
-==============================
+*******************************
 
 This section will cover the process of integrating STADLE with existing PyTorch code used to train a CNN on the CIFAR-10
 dataset.
@@ -612,7 +612,7 @@ Set the container model for the client, then start the agent FL process
 
 
 Running Client-Side STADLE Components
-=====================================
+**************************************
 
 After starting the requisite server-side STADLE components, there is one final step that must be run to fully
 initialize an FL process with STADLE and prepare for agent connections.  The component responsible for this
