@@ -232,44 +232,45 @@ shows an example of how this can be done within the main training loop of the lo
 training code:
 
 .. code-block::
-   :linenos:
-   
-   for epoch in range(num_epochs):
-      print('\nEpoch: %d' % (epoch + 1))
-      
-      """
-	  Addition for STADLE integration
-      """
-		if (epoch % 2 == 0):
-			# Don't send model at beginning of training
-            if (epoch != 0):
-                stadle_client.send_trained_model(agent.target_net)
+    :linenos:
+    
+    for epoch in range(num_epochs):
+        print('\nEpoch: %d' % (epoch + 1))
+        
+        """
+        Addition for STADLE integration
+        """
+        if (epoch % 2 == 0):
+            # Don't send model at beginning of training
+        
+        if (epoch != 0):
+            stadle_client.send_trained_model(agent.target_net)
 
-            sg_model_dict = stadle_client.wait_for_sg_model()
+        sg_model_dict = stadle_client.wait_for_sg_model()
 
-            model.load_state_dict(sg_model_dict)
+        model.load_state_dict(sg_model_dict)
 
-		model.train()
-		train_loss = 0
-		correct = 0
-		total = 0
+        model.train()
+        train_loss = 0
+        correct = 0
+        total = 0
 
-		for batch_idx, (inputs, targets) in enumerate(trainloader):
-			inputs, targets = inputs.to(device), targets.to(device)
+        for batch_idx, (inputs, targets) in enumerate(trainloader):
+            inputs, targets = inputs.to(device), targets.to(device)
 
-			optimizer.zero_grad()
-			outputs = model(inputs)
-			loss = criterion(outputs, targets)
+            optimizer.zero_grad()
+            outputs = model(inputs)
+            loss = criterion(outputs, targets)
 
-			loss.backward()
-			optimizer.step()
+            loss.backward()
+            optimizer.step()
 
-			_, predicted = outputs.max(1)
-			total += targets.size(0)
-			correct += predicted.eq(targets).sum().item()
+            _, predicted = outputs.max(1)
+            total += targets.size(0)
+            correct += predicted.eq(targets).sum().item()
 
-			sys.stdout.write('\r'+f"\rEpoch Accuracy: {(100*correct/total):.2f}%")
-		print('\n')
+            sys.stdout.write('\r'+f"\rEpoch Accuracy: {(100*correct/total):.2f}%")
+        print('\n')
 
 Step 4: Disconnect from STADLE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -378,53 +379,52 @@ The CIFAR-10 local training example code can then be segmented into these functi
 Train Function (CIFAR-10):
 
 .. code-block::
-	:linenos:
-
-	def train(model, data, **kwargs):
-		lr = float(kwargs.get("lr")) if kwargs.get("lr") else 0.001
-	    momentum = float(kwargs.get("momentum")) if kwargs.get("momentum") else 0.9
-	    epochs = int(kwargs.get("epochs")) if kwargs.get("epochs") else 2
-	    device = kwargs.get("device") if kwargs.get("device") else 'cpu'
-
-	    model = model.to(device)
-
-	    criterion = nn.CrossEntropyLoss()
-	    optimizer = optim.SGD(model.parameters(), lr=lr,
+    :linenos:
+     
+    def train(model, data, **kwargs):
+        lr = float(kwargs.get("lr")) if kwargs.get("lr") else 0.001
+        momentum = float(kwargs.get("momentum")) if kwargs.get("momentum") else 0.9
+        epochs = int(kwargs.get("epochs")) if kwargs.get("epochs") else 2
+        device = kwargs.get("device") if kwargs.get("device") else 'cpu'
+        
+        model = model.to(device)
+        
+        criterion = nn.CrossEntropyLoss()
+        optimizer = optim.SGD(model.parameters(), lr=lr,
 	                          momentum=momentum, weight_decay=5e-4)
-	    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
+        
+        ave_loss = []
 
-	    ave_loss = []
+        for epoch in range(epochs):  # loop over the dataset multiple times
 
-	    for epoch in range(epochs):  # loop over the dataset multiple times
+            print('\nEpoch: %d' % (epoch + 1))
 
-	        print('\nEpoch: %d' % (epoch + 1))
+            model.train()
+            train_loss = 0
+            correct = 0
+            total = 0
+            for batch_idx, (inputs, targets) in enumerate(trainloader):
+                inputs, targets = inputs.to(device), targets.to(device)
 
-	        model.train()
-	        train_loss = 0
-	        correct = 0
-	        total = 0
-	        for batch_idx, (inputs, targets) in enumerate(trainloader):
-	            inputs, targets = inputs.to(device), targets.to(device)
+                optimizer.zero_grad()
+                outputs = model(inputs)
+                loss = criterion(outputs, targets)
 
-	            optimizer.zero_grad()
-	            outputs = model(inputs)
-	            loss = criterion(outputs, targets)
+                loss.backward()
+                optimizer.step()
 
-	            loss.backward()
-	            optimizer.step()
+                train_loss += loss.item()
+                ave_loss.append(train_loss)
+                _, predicted = outputs.max(1)
+                total += targets.size(0)
+                correct += predicted.eq(targets).sum().item()
 
-	            train_loss += loss.item()
-	            ave_loss.append(train_loss)
-	            _, predicted = outputs.max(1)
-	            total += targets.size(0)
-	            correct += predicted.eq(targets).sum().item()
+        ave_loss = sum(ave_loss) / len(ave_loss)
 
-	    ave_loss = sum(ave_loss) / len(ave_loss)
+        model = model.to('cpu')
 
-	    model = model.to('cpu')
-
-	    return model, ave_loss
-
+        return model, ave_loss
 
 Cross-Validation Function (CIFAR-10):
 
