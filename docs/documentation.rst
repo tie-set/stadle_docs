@@ -5,6 +5,7 @@ STADLE Architecture
 *******************************
 
 .. image:: ../_static/stadle_arch.png
+  :width: 500
 
 STADLE Component Specifications
 *******************************
