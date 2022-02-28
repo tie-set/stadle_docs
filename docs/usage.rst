@@ -333,35 +333,35 @@ these abstractions in format.  The following are template implementations of the
 Train Function:
 
 .. code-block::
-	:linenos:
-
-	def train(model, data, **kwargs):
-		# Use data to locally train model
-		# kwargs used to pass general parameters to function
-
-	    return locally_trained_model, average_training_loss
+    :linenos:
+    
+    def train(model, data, **kwargs):
+        # Use data to locally train model
+        # kwargs used to pass general parameters to function
+        
+        return locally_trained_model, average_training_loss
 
 Cross-Validation Function:
 
 .. code-block::
-	:linenos:
-
-	def cross_validate(model, data, **kwargs):
-		# Use data to compute accuracy or other performance metric (validation set)
-		# kwargs used to pass general parameters to function
-
-	    return acc, ave_loss
+    :linenos:
+    
+    def cross_validate(model, data, **kwargs):
+        # Use data to compute accuracy or other performance metric (validation set)
+        # kwargs used to pass general parameters to function
+        
+        return acc, ave_loss
 
 Test Function:
 
 .. code-block::
-	:linenos:
+    :linenos:
 
-	def test(model, data, **kwargs):
-		# Use data to compute accuracy or other performance metric (test set)
-		# kwargs used to pass general parameters to function
-
-	    return acc, ave_loss
+    def test(model, data, **kwargs):
+        # Use data to compute accuracy or other performance metric (test set)
+        # kwargs used to pass general parameters to function
+        
+        return acc, ave_loss
 
 
 The IntegratedClient will go through the following steps to fulfill the agent-side role in FL:
@@ -648,14 +648,14 @@ STADLE, and is passed to the AdminAgent to be sent to the persistence server.
 The specific BaseModel object is then created with the VGG16 model structure and information.
 
 .. code-block::
-	:linenos:
-
+    :linenos:
+    
     args = admin_arg_parser()
     admin_agent = AdminAgent(config_file=args.config_path, simulation_flag=args.simulation,
                              aggregator_ip_address=args.ip_address, reg_socket=args.reg_port,
                              exch_socket=args.exch_port, model_path=args.model_path, base_model=base_model,
                              agent_running=args.agent_running)
-
+    
     admin_agent.preload()
     admin_agent.initialize()
 
