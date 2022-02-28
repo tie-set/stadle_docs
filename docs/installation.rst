@@ -114,16 +114,18 @@ After changing the directory to the STADLE source, build Docker compose
 
    docker-compose build
 
-Three start Docker compose
+Then, start Docker compose
 
 .. code-block:: python
+
    docker-compose up
 
 
 Developers
 *****************
 
-When developing stadle, make sure to install the STADLE in develop mode. This mode allows the developer to observe the changes made to the code without installing STADLE each time an update is made to the source.
+When developing stadle, make sure to install the STADLE in develop mode. 
+This mode allows the developer to observe the changes made to the code without installing STADLE each time an update is made to the source.
 
 To do debug the application, use the following command.
 
