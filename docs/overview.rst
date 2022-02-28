@@ -1,8 +1,9 @@
 Overview
 ========
 
-Overview of STADLE
-*********************
+Introduction to STADLE
+***********************
+
 Our STADLE is a paradigm-shifting intelligence centric platform for federated, collaborative, and continuous learning.
 STADLE stands for Scalable Traceable Adaptive Distributed Learning platform.
 
@@ -22,18 +23,18 @@ Our STADLE platform is horizontally designed and enhances the capability of FL.
 - **Adaptability**: Static intelligence procduced by big data systems gets outdated and underperform easily while the adaptive intelligence is created by a well designed distributd resilient learning framework that perfectly sync up the local and global models.
 
 
-General Terminologies
+STADLE Architecture
 *********************
 
 There are 3 main components in STADLE.
 
-- Persistence-server
+- Persistence Server
 
   - A core functionality which helps in keeping track of various database entries.
   - Packaged as a command inside `stadle` library.
   - `stadle persistence-server [args]`
 
-- Aggregator
+- (Cluster) Aggregator
 
   - A core FL server functionality that conducts aggregation process.
   - Packaged as a command inside `stadle` library.
@@ -47,4 +48,9 @@ There are 3 main components in STADLE.
   - `from stadle import BasicClient / IntegratedClient`
   - `class BasicClient / IntegratedClient` is used to integrate training, testing, validation functions of the local ML process.
 
-Ready to get started? Great! Click here for installation steps.
+All those components are connected using WebSockets and exchange machine learning models with each other.
+
+.. image:: ../_static/stadle_arch.png
+  :width: 500
+
+Ready to get started? Great! Click here for :ref:`Installation` steps.
