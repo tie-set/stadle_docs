@@ -4,9 +4,10 @@ Welcome to the STADLE 2.3.0 documentation!
 
 STADLE 2.3.0's documentation is divided into several sections on the left sidebar.
 If you're unable to find what you're looking for, please let us know! 
-Further information on STADLE and it's features can be found on our website https://stadle.ai
+Further information on STADLE and its features can be found on our `STADLE website`_.
 If this is your first time here, you may want to start with the Overview section.
 
+.. _STADLE website: https://stadle.ai
 
 Table of Contents:
 -------------
