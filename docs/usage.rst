@@ -568,17 +568,17 @@ The following is example code to set up the IntegratedClient with the previously
 start the FL process:
 
 .. code-block::
-	:linenos:
+    :linenos:
 
-	parser = argparse.ArgumentParser(description='STADLE CIFAR10 Training')
+    parser = argparse.ArgumentParser(description='STADLE CIFAR10 Training')
     parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
     parser.add_argument('--lt_epochs', default=3)
 
-	args = parser.parse_args()
+    args = parser.parse_args()
 
     device = 'cuda'
 
-	model = VGG('VGG16')
+    model = VGG('VGG16')
 
 Read in learning rate and number of local training epochs from command line arguments, set training device
 and define model to be trained.
@@ -610,7 +610,7 @@ Pass functions to IntegratedClient for use in internal training loop
 
 .. code-block::
     :linenos:
-	
+
     stadle_client.set_bm_obj(model)
     stadle_client.start()
 
