@@ -25,7 +25,7 @@ When you want to update the stadle client side package, just simply `pip uninsta
 STADLE Server-Side Installation
 ------------------------------------
 
-The STADLE server is available on the PyPI server and can be installed using the following command:
+In case you need to install the STADLE Persistence Server and Aggregator, the packaged code is available on the PyPI server and can be installed using the following command:
 
 .. code-block:: python
 

@@ -1,7 +1,10 @@
 Documentation
 =============
 
-.. image:: ../_static/architecture_ver0-5.png
+STADLE Architecture
+*******************************
+
+.. image:: ../_static/stadle_arch.png
 
 STADLE Component Specifications
 *******************************
