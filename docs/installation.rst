@@ -2,10 +2,13 @@ Installation
 ===============
 
 We support a couple of installation options such as using the source code and downloading from a PyPI server.
-For now, we keep the software a private content.
+For now, the STADLE software and codes are maintained as a private content.
+
+Installing from PyPI Server
+*******************************
 
 STADLE Client-Side Installation
-**********************************
+------------------------------------
 
 The users basically only need to install the STADLE client-side code as TieSet usually hosts the STADLE server-side components to which the client is connected to.
 The STADLE client is available on the PyPI server and can be installed using the following command:
@@ -20,7 +23,7 @@ When you want to update the stadle client side package, just simply `pip uninsta
 
 
 STADLE Server-Side Installation
-**********************************
+------------------------------------
 
 The STADLE server is available on the PyPI server and can be installed using the following command:
 
@@ -31,7 +34,7 @@ The STADLE server is available on the PyPI server and can be installed using the
 When you want to update the stadle client side package, just simply `pip uninstall stadle_server` and install it again.
 
 
-Installation from Source
+Installing from Source
 ******************************* 
 
 
