@@ -1,7 +1,33 @@
 Installation
-============
+===============
 
-We only support installing from the source as we keep the software a private content.
+We support a couple of installation options from the source or PyPI server.
+For now, we keep the software a private content.
+
+STADLE Client-Side Installation
+**********************************
+
+The users basically only need to install the STADLE client-side code and connect to the STALDE server that is hosted by TieSet for you.
+
+The STADLE client is available on the PyPI server and can be installed using the following command:
+
+.. code-block:: python
+
+  pip install --index-url http://xxx.xxx.xxx.xxx:8080 stadle_client --trusted-host xxx.xxx.xxx.xxx --extra-index-url https://pypi.org/simple
+
+We have already tested this on Linux x86_64 and Windows x86_64. Other versions will be created/fixed soon.
+When you update the stadle client side package, please `pip uninstall stadle_client` and do install it again.
+
+
+
+STADLE Server-Side Installation
+**********************************
+
+The STADLE server is available on the PyPI server and can be installed using the following command:
+
+.. code-block:: python
+  pip install --index-url http://<PUBLIC-IP-ADDRESS>:8080 stadle_server --trusted-host <PUBLIC-IP-ADDRESS> --no-cache-dir <PackageName>
+
 
 Linux/Ubuntu Users
 ******************
@@ -89,6 +115,8 @@ Additionally, to include tests, install as follows.
 .. code-block:: python
 
    pip install -e .[dev]
+
+If the command above does not work, please try `pip install -e ."[dev]"`.
 
 Run the test cases,
 

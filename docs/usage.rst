@@ -232,14 +232,14 @@ shows an example of how this can be done within the main training loop of the lo
 training code:
 
 .. code-block::
-	:linenos:
-
-	for epoch in range(num_epochs):
-		print('\nEpoch: %d' % (epoch + 1))
-
-		"""
-		Addition for STADLE integration
-		"""
+   :linenos:
+   
+   for epoch in range(num_epochs):
+      print('\nEpoch: %d' % (epoch + 1))
+      
+      """
+	  Addition for STADLE integration
+      """
 		if (epoch % 2 == 0):
 			# Don't send model at beginning of training
             if (epoch != 0):
@@ -600,8 +600,8 @@ Use the same CIFAR-10 datasets as the local training example
 
 .. code-block::
     :linenos:
-
-	stadle_client.set_termination_function(judge_termination, round_to_exit=20, client=stadle_client)
+    
+    stadle_client.set_termination_function(judge_termination, round_to_exit=20, client=stadle_client)
     stadle_client.set_training_function(train, trainloader, lr=args.lr, epochs=args.lt_epochs, device=device, agent_name=args.agent_name)
     stadle_client.set_cross_validation_function(cross_validate, testloader, device=device)
     stadle_client.set_testing_function(test, testloader)
@@ -609,9 +609,9 @@ Use the same CIFAR-10 datasets as the local training example
 Pass functions to IntegratedClient for use in internal training loop
 
 .. code-block::
-	:linenos:
-
-	stadle_client.set_bm_obj(model)
+    :linenos:
+	
+    stadle_client.set_bm_obj(model)
     stadle_client.start()
 
 Set the container model for the client, then start the agent FL process
