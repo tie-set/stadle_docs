@@ -7,6 +7,10 @@ STADLE Component Specifications
 Agent
 -----
 
+First of all, there is a registration process of an agent as follows.
+
+.. image:: ../_static/agent_reg_process.png
+
 At the agent side, it is expected that two independent processes, which communicate each other through local files, are running.
 
 .. image:: ../_static/spec_agent.png
@@ -15,7 +19,7 @@ At the agent side, it is expected that two independent processes, which communic
 
 **Client (Communication handler)**
 
-Note that this portion is written based on the ``Client2.py`` implementation.
+Note that this portion is written based on the ``client.py`` implementation.
 
 * The initialization brings an agent to the ``waiting_sgm`` state where the agent waits for the semi-global models (base models) for training. This change is conducted by the ``Client`` module. While being in this state, the agent will pause its training.
 * The arrival of the semi-global models from an aggregator changes the agent's state to ``sg_ready``. This change is conducted by the ``Client`` module. The state is communicated to ``MLEngine`` through a local ``state`` file. At the same time, the semi-global models are saved as a binary local file. The file names and local paths can be configured through the ``config.jason`` file. Please read the `config file documentation`_.
@@ -268,4 +272,78 @@ IntegratedClient
 
 
 Config File Documentation
-******************
+**************************
+
+config_db.json
+--------------
+
+This json file is read by STADLE DB handlers to configure the initial setups.
+
+- `db_ip`: An DB IP address
+  - e.g. `localhost`
+- `db_socket`: A socket number used between DB and an aggregator.
+  - e.g. `9017`
+- `db_data_path`: A path to the database directory.
+  - e.g. `./db`
+- `db_name`: Name of database. If the same database name is called, STADLE reuse the databasem, otherwise creating a new db.
+  - e.g. `sample_data`
+- `db_model_path`: A path to the directory in which AI models are stored.
+  - e.g. `./db/sample_models`
+
+
+config_aggregator.json
+-------------------------
+
+This json file is read by STADLE aggregators to configure the initial setups.
+
+- `aggr_ip`: An aggregator IP address
+  - e.g. `localhost`
+- `reg_socket`: A socket number used by agents to join an aggregator for the first time.
+  - e.g. `8765`
+- `exch_socket`: A socket number used to upload local models to an aggregator from an agent. Agents will get to know this socket from the communications with an aggregator.
+  - e.g. `7890`
+- `recv_socket`: A socket number used to send back semi global models to an agent from an aggregator. Agents will get to know this socket from the communications with an aggregator.
+  - e.g. `4321`
+- `db_ip`: IP address of DB instance. Used to connect to DB in which aggregators' info is saved.
+  - e.g. `localhost`
+- `db_socket`: A socket number used between DB and an aggregator.
+  - e.g. `9017`
+- `round_interval`: Period of time after which an agent check if there are enough number of models to start an aggregation step. (Unit: seconds)
+  - e.g. `5`
+- `sample_size`: The number of cluster models used by an aggregator when it synthesizes semi global models.
+  - MUST BE LESS THAN the total number of clusters
+  - e.g. `1`
+- `is_sampling`: Boolean flag that indicates if an aggregator uses a sampling synthesis. Sampling is on if `1`. All cluster models are used if it is set to `0`.
+  - e.g. `1`
+- `aggregation_threshold`: The number of local models required to start an aggregation step
+  - e.g. `1`
+- `model_names`: A list of model names. In STADLE, every NN should be decomposed into `numpy.array` when sending it. Each `numpy.array` instance should have a unique name to be used system-wide.
+  - Aggregators issue warnings if models with unknown names are sent from agents.
+  - e.g. [ "model1", "model2"]
+- `aggr_data_path`: A path to aggregators data such as their IDs. If multiple aggregators are running, each path needs to be identical.
+  - e.g. `./data/aggr`
+- `token`: A token that is used for registration process of agents. Agents need to have the same token to be registered in the STADLE system.
+  - e.g. `stadle12345`
+
+
+config_agent.json
+--------------------
+
+This json file is read by STADLE agents to configure their initial setups.
+
+- `model_path`: A path to a local director in the agent machine to save local models and some state info. 
+  - e.g. "."
+- `local_model_file_name`: A file name to save local models in the agent machine. 
+  - e.g. `lms.binaryfile`
+- `semi_global_model_file_name`: A file name to save the latest semi-global models in the agent machine. 
+  - e.g. `sgms.binaryfile`
+- `state_file_name`: A file name to store the agent state in the agent machine.
+  - e.g. `state`
+- `aggr_ip`: An aggregator IP address for agents to connect.
+  - e.g. `localhost`
+- `reg_socket`: A socket number used by agents to join an aggregator for the first time.
+  - e.g. `8765`
+- `init_weights_flag`: A flag used for initializing weights.
+  - e.g. `1`
+- `token`: A token that is used for registration process of agents. Agents need to have the same token to be registered in the STADLE system.
+  - e.g. `stadle12345`
