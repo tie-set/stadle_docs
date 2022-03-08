@@ -53,4 +53,48 @@ All those components are connected using WebSockets and exchange machine learnin
 .. image:: ../_static/stadle_arch.png
   :width: 500
 
+
+STADLE Initialization 
+*************************************
+
+Components Registration
+------------------------
+Overall registration sequence of aggregators and agents with a database is described in Figure /Process of aggregator and agent registration in database server/. The sequence is quite simple. The initialization and registration process always needs to happen in the order of database, aggregator, and agents.
+
+.. image:: ../_static/agent_reg_simple.png
+
+
+Initial Model Upload Process by Admin Agent
+--------------------------------------------
+Next step of running a federated learning process is to register the initial ML model whose architecture will be used in the entire and continuous process of FL by all the aggregators and agents. We call the initial ML model used as a reference to model aggregation as a “base model”. Also, we call the agent that uploads the initial base model an “admin agent”. That being said, the process of initializing the base model can be seen in the Figure /Admin agent’s base model upload process/. The base model info could include the ML model itself as well as the time it was generated, the initial performance data, etc.
+
+.. image:: ../_static/initial_model_reg_simple.png
+
+Federated Learning Cycle & Process
+-----------------------------------
+Figure /Overview of the federated learning process/ shows the overall process of how federated learning is continuously conducted between an aggregator and an agent typically. Here it only describes a single-agent case, but in real case and operation, the agent environments are many and dispersed into distributed devices. 
+The agents other than the admin agent will request the global model that is an updated federated ML model in order to deploy it to its own application. 
+Once the agent gets the updated model from the aggregator and deploys it, the agent basically retrains the ML model locally with new data that is obtained afterwards. Again, these local data will not be shared with the aggregator and stay local within the distributed devices. 
+After retraining the local ML model (that of course has the same architecture as the global/base model of the federated learning), the agent calls FL client API to send the model to the aggregator.
+Aggregator receives the model and pushes the model to the database. The aggregator keeps track of the number of collected ML models and it will keep accepting the local ML models as long as the federation round is open. The round can be closed with any defined criteria such as the aggregator receiving enough ML models to be federated. When the criteria are met, the aggregator aggregates the ML model and produces an updated global model that is ready to be sent back to the agent.
+During that process above, agents constantly keep polling to the aggregator if the global model is realy or not. Or in some cases, the aggregator may push the global model to the agents that are connected to the aggregator depending on the design and network constraints. Then, the updated model is sent back to the agent.
+After receiving the updated global model, the agent deploys and retrains it whenever that is ready and repeats this process until the termination criteria are met for the federated learning. In many cases, there are no termination conditions to stop this federated learning and retraining process.
+
+
+.. image:: ../_static/fl_cycle_simple.png
+
+
+Client-side local retraining cycle & process
+---------------------------------------------
+The algorithm used by the agent is described in Figure /Algorithm used by agent nodes to adapt and update ML model/.
+(1) The agent queries the aggregator for updates to the global model (a.k.a. ML model exchanged between the aggregator and agent). Basically, a polling method is used to query the updated global model every seconds/minutes/hours/days. However, in some specific settings, an aggregator could push the updated global model to all agents.
+(2) If available, the agent downloads the federated global model that has been updated by the aggregator. These parameters can be kept-read only, but attempted changes to them during training are cached. 
+(3) The agent feeds the downloaded global model to its ML model. Before completely replacing the local ML model with the downloaded model, the agent can calculate an output and store the new input and the feedback from the process. 
+(4) The agent can proceed with the local (re)training process. During the training of the model, an additional optimization objective could be added for the prediction error for the process variables. The model is trained to optimize its performance and process variable prediction objectives. Interpretability of this process is discussed below.
+(5) Updates to be made to the ML model that is cached so it can be sent to the aggregator when a new update to the local model is ready. Then, agent sends back its updated local ML model to an aggregator.
+
+
+.. image:: ../_static/spec_agent.png
+
+
 Ready to get started? Great! Click here for :ref:`Installation` steps.
