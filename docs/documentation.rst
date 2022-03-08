@@ -143,7 +143,7 @@ Config File Documentation
 config_db.json
 --------------
 
-This json file is read by STADLE DB handlers to configure the initial setups.
+This JSON file is read by STADLE persistence server to configure the initial setups.
 
 - `db_ip`: An DB IP address
   - e.g. `localhost`
@@ -160,7 +160,7 @@ This json file is read by STADLE DB handlers to configure the initial setups.
 config_aggregator.json
 -------------------------
 
-This json file is read by STADLE aggregators to configure the initial setups.
+This JSON file is read by STADLE aggregators to configure the initial setups.
 
 - `aggr_ip`: An aggregator IP address
   - e.g. `localhost`
@@ -195,7 +195,23 @@ This json file is read by STADLE aggregators to configure the initial setups.
 config_agent.json
 --------------------
 
-This json file is read by STADLE agents to configure their initial setups.
+This JSON file is read by STADLE agents to configure their initial setups.
+
+.. code-block::
+	:linenos:
+    {
+        "agent_name": "default_agent"
+        "model_path": "./data/agent",
+        "local_model_file_name": "lms.binaryfile",
+        "semi_global_model_file_name": "sgms.binaryfile",
+        "state_file_name": "state",
+        "aggr_ip": "localhost",
+        "reg_socket": "8765",
+        "init_weights_flag": 1,
+        "token": "stadle12345",
+        "simulation": "False",
+        "exch_socket": "0000"
+    }
 
 - `model_path`: A path to a local director in the agent machine to save local models and some state info. 
   - e.g. "."
