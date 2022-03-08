@@ -198,7 +198,8 @@ config_agent.json
 This JSON file is read by STADLE agents to configure their initial setups.
 
 .. code-block::
-	:linenos:
+    :linenos:
+    
     {
         "agent_name": "default_agent"
         "model_path": "./data/agent",
