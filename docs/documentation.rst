@@ -1,8 +1,18 @@
 Documentation
 =============
 
+
 Client API Documentation
-******************
+**************************
+
+
+AdminAgent
+-----------
+
+.. py:attribute:: stadle.AdminAgent
+
+    Class of Admin Agent to register initial base models.
+
 
 BasicClient
 -----------
