@@ -1,9 +1,8 @@
 Documentation
 =============
 
-
 Client API Documentation
-*************************
+******************
 
 BasicClient
 -----------
