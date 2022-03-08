@@ -196,23 +196,23 @@ Here is the sample content of the JSON file.
     :linenos:
 
     {
+        "db_name": "sample_data",
         "db_ip": "localhost",
         "db_socket": 9017,
         "db_data_path": "./db",
-        "db_name": "sample_data",
         "db_model_path": "./db/sample_models",
         "db_token": "Stadledb123$%",
         "simulation": "False"
     }
 
+- `db_name`: A name of database. If the same database name is called, STADLE reuses the database, otherwise it creates a new db.
+  - e.g. `sample_data`
 - `db_ip`: An DB IP address
   - e.g. `localhost`
 - `db_socket`: A socket number used between DB and an aggregator.
   - e.g. `9017`
 - `db_data_path`: A path to the database directory.
   - e.g. `./db`
-- `db_name`: Name of database. If the same database name is called, STADLE reuse the databasem, otherwise creating a new db.
-  - e.g. `sample_data`
 - `db_model_path`: A path to the directory in which AI models are stored.
   - e.g. `./db/sample_models`
 - `simulation`: A flag used to enable a simulation mode.
