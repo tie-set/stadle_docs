@@ -140,8 +140,6 @@ IntegratedClient
 Config File Documentation
 **************************
 
-The users of the STADLE basocally care about the agent side configulation in order to connect the agent side ML application to the STADLE aggregator.
-
 Configuration of Agent
 ------------------------
 
