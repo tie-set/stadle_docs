@@ -140,66 +140,17 @@ IntegratedClient
 Config File Documentation
 **************************
 
-config_db.json
---------------
+The users of the STADLE basocally care about the agent side configulation in order to connect the agent side ML application to the STADLE aggregator.
 
-This JSON file is read by STADLE persistence server to configure the initial setups.
+Configuration of Agent
+------------------------
 
-- `db_ip`: An DB IP address
-  - e.g. `localhost`
-- `db_socket`: A socket number used between DB and an aggregator.
-  - e.g. `9017`
-- `db_data_path`: A path to the database directory.
-  - e.g. `./db`
-- `db_name`: Name of database. If the same database name is called, STADLE reuse the databasem, otherwise creating a new db.
-  - e.g. `sample_data`
-- `db_model_path`: A path to the directory in which AI models are stored.
-  - e.g. `./db/sample_models`
-
-
-config_aggregator.json
--------------------------
-
-This JSON file is read by STADLE aggregators to configure the initial setups.
-
-- `aggr_ip`: An aggregator IP address
-  - e.g. `localhost`
-- `reg_socket`: A socket number used by agents to join an aggregator for the first time.
-  - e.g. `8765`
-- `exch_socket`: A socket number used to upload local models to an aggregator from an agent. Agents will get to know this socket from the communications with an aggregator.
-  - e.g. `7890`
-- `recv_socket`: A socket number used to send back semi global models to an agent from an aggregator. Agents will get to know this socket from the communications with an aggregator.
-  - e.g. `4321`
-- `db_ip`: IP address of DB instance. Used to connect to DB in which aggregators' info is saved.
-  - e.g. `localhost`
-- `db_socket`: A socket number used between DB and an aggregator.
-  - e.g. `9017`
-- `round_interval`: Period of time after which an agent check if there are enough number of models to start an aggregation step. (Unit: seconds)
-  - e.g. `5`
-- `sample_size`: The number of cluster models used by an aggregator when it synthesizes semi global models.
-  - MUST BE LESS THAN the total number of clusters
-  - e.g. `1`
-- `is_sampling`: Boolean flag that indicates if an aggregator uses a sampling synthesis. Sampling is on if `1`. All cluster models are used if it is set to `0`.
-  - e.g. `1`
-- `aggregation_threshold`: The number of local models required to start an aggregation step
-  - e.g. `1`
-- `model_names`: A list of model names. In STADLE, every NN should be decomposed into `numpy.array` when sending it. Each `numpy.array` instance should have a unique name to be used system-wide.
-  - Aggregators issue warnings if models with unknown names are sent from agents.
-  - e.g. [ "model1", "model2"]
-- `aggr_data_path`: A path to aggregators data such as their IDs. If multiple aggregators are running, each path needs to be identical.
-  - e.g. `./data/aggr`
-- `token`: A token that is used for registration process of agents. Agents need to have the same token to be registered in the STADLE system.
-  - e.g. `stadle12345`
-
-
-config_agent.json
---------------------
-
-This JSON file is read by STADLE agents to configure their initial setups.
+This JSON file, for example `config_agent.json` file, is read by STADLE agents for initial setup.
+Here is the sample content of the JSON file.
 
 .. code-block::
     :linenos:
-    
+
     {
         "agent_name": "default_agent"
         "model_path": "./data/agent",
@@ -214,8 +165,10 @@ This JSON file is read by STADLE agents to configure their initial setups.
         "exch_socket": "0000"
     }
 
+- `agent_name`: A unique name of the agent that users can define.
+  - e.g. `default_agent`
 - `model_path`: A path to a local director in the agent machine to save local models and some state info. 
-  - e.g. "."
+  - e.g. `./data/agent`
 - `local_model_file_name`: A file name to save local models in the agent machine. 
   - e.g. `lms.binaryfile`
 - `semi_global_model_file_name`: A file name to save the latest semi-global models in the agent machine. 
@@ -223,10 +176,108 @@ This JSON file is read by STADLE agents to configure their initial setups.
 - `state_file_name`: A file name to store the agent state in the agent machine.
   - e.g. `state`
 - `aggr_ip`: An aggregator IP address for agents to connect.
-  - e.g. `localhost`
+  - e.g. `localhost`, `123.456.789`
 - `reg_socket`: A socket number used by agents to join an aggregator for the first time.
   - e.g. `8765`
 - `init_weights_flag`: A flag used for initializing weights.
   - e.g. `1`
 - `token`: A token that is used for registration process of agents. Agents need to have the same token to be registered in the STADLE system.
   - e.g. `stadle12345`
+- `simulation`: A flag used to enable a simulation mode.
+  - e.g. `True`
+- `exh_socket`: A socket number used to upload local models to an aggregator from an agent. Agents will get to know this socket from the communications with an aggregator.
+  - e.g. `7890`
+
+
+Configuration of Persistence Server
+------------------------------------
+
+This JSON file, for example `config_db.json`, is read by STADLE persistence server for initial setup.
+Here is the sample content of the JSON file.
+
+.. code-block::
+    :linenos:
+
+    {
+        "db_ip": "localhost",
+        "db_socket": 9017,
+        "db_data_path": "./db",
+        "db_name": "sample_data",
+        "db_model_path": "./db/sample_models",
+        "db_token": "Stadledb123$%",
+        "simulation": "False"
+    }
+
+- `db_ip`: An DB IP address
+  - e.g. `localhost`
+- `db_socket`: A socket number used between DB and an aggregator.
+  - e.g. `9017`
+- `db_data_path`: A path to the database directory.
+  - e.g. `./db`
+- `db_name`: Name of database. If the same database name is called, STADLE reuse the databasem, otherwise creating a new db.
+  - e.g. `sample_data`
+- `db_model_path`: A path to the directory in which AI models are stored.
+  - e.g. `./db/sample_models`
+- `simulation`: A flag used to enable a simulation mode.
+  - e.g. `True`
+
+
+Configuration of Aggregator
+-------------------------
+
+This JSON file, for example `config_aggregator.json`, is read by STADLE aggregators for initial setup.
+Here is the sample content of the JSON file.
+
+.. code-block::
+    :linenos:
+
+    {
+        "aggr_name": "default_aggregator"
+        "aggr_ip": "localhost",
+        "project_id": "default_project_id",
+        "reg_socket": 8765,
+        "recv_socket": 4321,
+        "exch_socket": 7890,
+        "db_ip": "0.0.0.0",
+        "db_socket": 9017,
+        "round_interval": 5,
+        "sample_size": 1,
+        "is_sampling": 1,
+        "aggregation_threshold": 0.7,
+        "aggr_data_path": "./data/agg",
+        "aggr_token": "stadle12345",
+        "db_token": "Stadledb123$%",
+    }
+
+
+- `aggr_name`: A unique name of the aggregator that users can define.
+  - e.g. `default_aggregator`
+- `aggr_ip`: An aggregator IP address
+  - e.g. `localhost`
+- `project_id`: A project ID to which an aggregator is assigned.
+  - e.g. `default_project_id`
+- `reg_socket`: A socket number used by agents to join an aggregator for the first time.
+  - e.g. `8765`
+- `recv_socket`: A socket number used to send back semi global models to an agent from an aggregator. Agents will get to know this socket from the communications with an aggregator.
+  - e.g. `4321`
+- `exch_socket`: A socket number used to upload local models to an aggregator from an agent. Agents will get to know this socket from the communications with an aggregator.
+  - e.g. `7890`
+- `db_ip`: IP address of DB instance. Used to connect to DB in which aggregators' info is saved.
+  - e.g. `localhost`
+- `db_socket`: A socket number used between DB and an aggregator.
+  - e.g. `9017`
+- `round_interval`: Period of time after which an agent check if there are enough number of models to start an aggregation step. (Unit: seconds)
+  - e.g. `5`
+- `sample_size`: The number of cluster models used by an aggregator when it synthesizes semi global models.
+  - MUST BE LESS THAN the total number of clusters
+  - e.g. `1`
+- `is_sampling`: Boolean flag that indicates if an aggregator uses a sampling synthesis. Sampling is on if `1`. All cluster models are used if it is set to `0`.
+  - e.g. `1`
+- `aggregation_threshold`: The percentage over the number of local models required to start an aggregation step. If it is `0.7`, for example, 70% of the active agents need to upload the local ML models to start the aggregation.
+  - e.g. `1.0`, `0.7`
+- `aggr_data_path`: A path to aggregators data such as their IDs. If multiple aggregators are running, each path needs to be identical.
+  - e.g. `./data/agg`
+- `aggr_token`: A token that is used for registration process of agents. Agents need to have the same token to be registered in the STADLE system.
+  - e.g. `stadle12345`
+- `db_token`: A token that is used for registring an aggregator into the STADLE database. Aggregators need to have the same token to be registered in the STADLE Database.
+  - e.g. `Stadledb123$%`
