@@ -188,8 +188,7 @@ Here is the sample content of the JSON file.
 
 
 Configuration of Persistence Server
-------------------------------------
-
+-----------------------------------
 This JSON file, for example `config_db.json`, is read by STADLE persistence server for initial setup.
 Here is the sample content of the JSON file.
 
