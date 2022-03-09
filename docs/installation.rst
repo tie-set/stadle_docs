@@ -17,9 +17,9 @@ The STADLE client is available on the PyPI server and can be installed using the
 
   pip install --index-url http://<PUBLIC-IP-ADDRESS>:8080 stadle_client --trusted-host <PUBLIC-IP-ADDRESS> --extra-index-url https://pypi.org/simple
 
-We have already tested this on Linux x86_64 and Windows x86_64. 
-Other versions will be created/fixed soon.
 When you want to update the stadle client side package, just simply `pip uninstall stadle_client` and install it again.
+
+.. NOTE:: We have already tested this on Linux x86_64 and Windows x86_64. Other versions will be created or fixed soon.
 
 
 STADLE Server-Side Installation
