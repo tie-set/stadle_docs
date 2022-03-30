@@ -14,15 +14,20 @@ To do debug the application, use the following command.
 
 .. code-block:: python
 
+   python -m venv DEVSTADLE
+   source DEVSTADLE/bin/activate
+
+Then, change the directrory to the STADLE source, and run the following command.
+
+.. code-block:: python
+
    python setup.py develop
    
 Additionally, to include tests, install as follows.
 
 .. code-block:: python
 
-   pip install -e ."[dev]"
-
-If the command above does not work, please try `pip install -e .[dev]`.
+   pip install -e ".[dev]"
 
 Run the test cases,
 
