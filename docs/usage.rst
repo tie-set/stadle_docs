@@ -2,7 +2,10 @@ Usage
 =============
 
 This section covers the requisite steps for integrating STADLE with a basic deep learning training process.
-Please refer to :ref:`Installation` to set up the virtual environment used to run STADLE.
+Please refer to :ref:`Installation` to set up the client environment to connect to STADLE.
+Also, please download the sample codes from `here`_. to which the STADLE libraries are already connected.
+
+.. _here: https://github.com/tie-set/stadle_examples
 
 Running Server-Side STADLE Components
 **************************************
