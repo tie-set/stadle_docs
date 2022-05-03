@@ -3,7 +3,7 @@ Quickstart
 
 Using our STADLE platfrom is as easy as just following the 3 steps below.
 
-STEP 1: Setting up STADLE Server 
+STEP 1: Set up STADLE Server 
 **************************************
 
 Just go to the `stadle.ai`_ and sign up for a free account.
@@ -11,9 +11,9 @@ Then, login to your account, create a new project, and initiate an aggregator.
 
 With your free account, you will be able to create one project and initiate one aggregator.
 
-.. _stadle.ai: https://www.satdle.ai
+.. _stadle.ai: https://stadle.ai/
 
-STEP 2: STADLE Client Installation
+STEP 2: Install STADLE Client 
 ******************************************
 
 The STADLE client can be installed using the following command:
@@ -54,4 +54,5 @@ Then, just run the following commands.
   python minimal_admin_agent.py
   python minimal_fl_agent.py --agent_name <AGEMT_NAME>
 
-You will see that the information of Base model, aggregation, federated learning round, etc.
+You can run multiple agents with different agent names.
+You will see that the information of Base model, aggregation, federated learning round, etc. on the STADLE dashboard.
