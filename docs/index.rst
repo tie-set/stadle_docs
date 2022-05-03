@@ -18,6 +18,7 @@ Table of Contents:
    :maxdepth: 3
 
    overview
+   quickstart
    installation
    usage
    documentation
