@@ -24,7 +24,7 @@ First upgrade the pip.
 
   pip install --upgrade pip
 
-Then, install stadle-client.
+Then, install the `stadle-client`.
 
 .. .. code-block:: python
 
@@ -37,7 +37,7 @@ Then, install stadle-client.
   pip install --index-url http://3.110.171.230:8080 stadle_client --trusted-host 3.110.171.230 --extra-index-url https://pypi.org/simple
 
 
-STEP 3: Run Local STADLE ML Example Codes  
+STEP 3: Run Local STADLE Example Codes  
 ******************************************
 
 You can quickly test to run and connect any sample applications from our `STADLE examples`_ about local ML processes.
