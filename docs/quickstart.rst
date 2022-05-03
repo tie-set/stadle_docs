@@ -37,11 +37,11 @@ Then, install stadle-client.
   pip install --index-url http://3.110.171.230:8080 stadle_client --trusted-host 3.110.171.230 --extra-index-url https://pypi.org/simple
 
 
-STEP 3: Run STADLE Example Codes  
+STEP 3: Run Local STADLE ML Example Codes  
 ******************************************
 
-You can quickly test to run and connect any sample applications from our `STADLE examples`_.
-To do so, just download the stadle example codes from our repo.
+You can quickly test to run and connect any sample applications from our `STADLE examples`_ about local ML processes.
+To do so, just download the local example codes from the repo.
 
 .. _STADLE examples: https://github.com/tie-set/stadle_examples
 
@@ -50,12 +50,12 @@ To do so, just download the stadle example codes from our repo.
   git clone https://github.com/tie-set/stadle_examples.git
 
 
-After downloading the sample codes, just follow the instruction on how to run those applications.
+After downloading the sample codes, just follow the instruction of the README on how to run those applications with the STADLE client-side APIs.
 
 For example, to run the minimal example using PyTorch, just go to `minimal_examples/pytorch` folder.
-Then modify the config files.
+Then, modify the config files.
 In particular, "aggr_ip" is the IP address that you see in the STADLE Dashcboard from your stadle.ai account, 
-and "reg_port" is the port to connect shown on the STADLE dashboard.
+and "reg_port" is the port to connect shown on the STADLE dashboard as well.
 
 Then, just run the following commands.
 
@@ -65,4 +65,4 @@ Then, just run the following commands.
   python minimal_fl_agent.py --agent_name <AGEMT_NAME>
 
 You can run multiple agents with different agent names.
-You will see that the information of Base model, aggregation, federated learning round, etc. on the STADLE dashboard.
+You will see that the information of the base ML model, aggregation process and round on the STADLE dashboard.
