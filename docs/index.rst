@@ -19,7 +19,6 @@ Table of Contents:
 
    overview
    quickstart
-   installation
    usage
    documentation
    contributing
