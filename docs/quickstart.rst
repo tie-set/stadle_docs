@@ -16,13 +16,21 @@ With your free account, you will be able to create one project and initiate one 
 STEP 2: Install STADLE Client 
 ******************************************
 
-The STADLE client can be installed using the following command:
+The STADLE client can be installed using the following commands.
+
+First upgrade the pip.
 
 .. code-block:: python
 
-  pip install stadle-client
+  pip install --upgrade pip
 
-If the command above is not working with your environment, please try the following command:
+Then, install stadle-client.
+
+.. .. code-block:: python
+
+..  pip install stadle-client
+
+.. If the command above is not working with your environment, please try the following command:
 
 .. code-block:: python
 
@@ -32,8 +40,10 @@ If the command above is not working with your environment, please try the follow
 STEP 3: Run STADLE Example Codes  
 ******************************************
 
-You can quickly run and connect any sample applications from our STADLE examples.
+You can quickly test to run and connect any sample applications from our `STADLE examples`_.
 To do so, just download the stadle example codes from our repo.
+
+.. _STADLE examples: https://github.com/tie-set/stadle_examples
 
 .. code-block:: python
 
