@@ -26,15 +26,17 @@ First upgrade the pip.
 
 Then, install the `stadle-client`.
 
-.. .. code-block:: python
+.. code-block:: python
 
-..  pip install stadle-client
+  pip install stadle-client
 
 .. If the command above is not working with your environment, please try the following command:
 
-.. code-block:: python
+.. .. code-block:: python
 
-  pip install --index-url http://3.110.171.230:8080 stadle_client --trusted-host 3.110.171.230 --extra-index-url https://pypi.org/simple
+..  pip install --index-url http://3.110.171.230:8080 stadle_client --trusted-host 3.110.171.230 --extra-index-url https://pypi.org/simple
+
+.. NOTE:: The environment needs to be `Python 3.8.0` or newer.
 
 
 STEP 3: Run Local STADLE Example Codes  
