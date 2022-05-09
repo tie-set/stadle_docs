@@ -8,6 +8,7 @@ STEP 1: Set up STADLE Server
 
 Just go to the `stadle.ai`_ and sign up for a free account.
 Then, login to your account, create a new project, and initiate an aggregator.
+(Just wait for a few seconds to get the aggregator running.)
 
 With your free account, you will be able to create one project and initiate one aggregator.
 
