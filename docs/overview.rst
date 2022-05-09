@@ -57,25 +57,24 @@ All those components are connected using WebSockets and exchange machine learnin
 STADLE Initialization 
 *************************************
 
-Components Registration
-------------------------
-Overall registration sequence of aggregators and agents with a database is described in Figure below.
-The sequence is quite simple. The initialization and registration process always needs to happen in the order of database, aggregators, and agents.
+.. Components Registration
+.. ------------------------
+.. Overall registration sequence of aggregators and agents with a database is described in Figure below.
+.. The sequence is quite simple. The initialization and registration process always needs to happen in the order of database, aggregators, and agents.
 
-.. image:: ../_static/agent_aggr_reg_simple.png
+.. .. image:: ../_static/agent_aggr_reg_simple.png
 
 
 Initial Model Upload Process by Admin Agent
 --------------------------------------------
-Next step of running a federated learning process is to register the initial ML model which we call a base model.
+The first step of running a federated learning process is to register the initial ML model which we call a base model.
 The architecture of the base model will be used in the entire process of FL by all the aggregators and agents. 
-We call the agent that uploads the initial base model an “admin agent”. 
-The process of initializing the base model can be seen in the Figure below.
-The base model info could include the ML model itself as well as the time it was generated, the initial performance data, etc.
+We call the agent that uploads the initial base model an “admin agent”.
+The base model info could include the ML model itself as well as the model type such as PyTorch, the time it was generated, the initial performance data, etc.
 The base model can be also used as the very fiest semi-global model (SG model) to be downloaded by the other agents.
-The following process can happen just once unless you want to start a new federated learning process from the beginning. 
+This process can happen just once unless you want to start a new federated learning process from the beginning. 
 
-.. image:: ../_static/initial_model_reg_simple.png
+.. .. image:: ../_static/initial_model_reg_simple.png
 
 
 Federated Learning Cycle with STADLE
@@ -126,4 +125,4 @@ Figure below is the state transition of an agnet for local ML training.
 .. image:: ../_static/spec_agent.png
 
 
-Ready to get started? Great! Click here for :ref:`Installation` steps.
+Ready to get started? Great! Click here for :ref:`Quickstart`.
