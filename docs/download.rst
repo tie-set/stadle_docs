@@ -1,8 +1,0 @@
-Download Documentation
-====================
-
-pdf
-****
-
-
-
