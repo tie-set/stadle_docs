@@ -156,11 +156,11 @@ Here is the sample content of the JSON file.
         "semi_global_model_file_name": "sgms.binaryfile",
         "state_file_name": "state",
         "aggr_ip": "localhost",
-        "reg_socket": "8765",
+        "reg_port": "8765",
         "init_weights_flag": 1,
         "token": "stadle12345",
         "simulation": "False",
-        "exch_socket": "0000"
+        "exch_port": "0000"
     }
 
 - `agent_name`: A unique name of the agent that users can define.
