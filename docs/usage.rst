@@ -2,43 +2,29 @@ Usage
 =============
 
 This section covers the requisite steps for integrating STADLE with a basic deep learning training process.
-Please refer to :ref:`Installation` to set up the client environment to connect to STADLE.
-Also, please download the sample codes from `here`_. to which the STADLE libraries are already connected.
+Please refer to :ref:`Quickstart` to set up the client environment to connect to STADLE.
+Also, please download the sample codes from `here`_ in which the STADLE libraries are already integrated.
 
 .. _here: https://github.com/tie-set/stadle_examples
 
 Running Server-Side STADLE Components
 **************************************
 
-There are two main STADLE-side components that must be running to manage a federated learning process.
+The STADLE server-side components such as persistence server and aggregators can be configured through the `stadle.ai`_ dashboard as explained in the Quickstart.
 
-The first is the **persistence server** - this component is in charge of managing the model parameters and other
-FL-specific data generated while using STADLE.  With the STADLE virtual environment active, the persistence server
-can be started with the following command:
-
-::
-
-	stadle persistence-server
-The persistence server can be configured with a config file by including the path to the file as an argument:
-
-::
-
-	stadle persistence-server --config_file /path/to/config/file.json
-Specific parameters can also be set using command line arguments - refer to :ref:`Config File Documentation` for details
-on the config file parameters, and run ``stadle persistence-server --help`` to see the accepted command line arguments for the persistence server.
+.. _stadle.ai: https://stadle.ai/
 
 
-The second STADLE-side component is the **aggregator** - as the name suggests, this component is in charge of collecting
-and aggreagting the models it receives from the clients performing local training to produce cluster models.  It then
-communicates with the persistence server to aggregate a sample of cluster models and produce a semi-global model, which is
-sent back to the clients for the next round of local training.  Similarly, the aggregator can be started with the following
-command:
+Initiating Aggregator
+---------------------
 
-::
+Once you create your own account, you will be able to create a new project on overview page of the dashboard.
+Within one project you will be able to assign an AI model such as VGG16.
+If you would like to federate many AI models, you will have to create multiple projects for each AI model to be aggregated as the architecture of the AI model needs to be consistent among all the agents that are connected to the aggregator.
 
-	stadle aggregator --config_file /path/to/config/file.json
-Specific parameters can be set using command line arguments - refer to :ref:`Config File Documentation` for details
-on the config file parameters, and run ``stadle aggregator --help`` to see the accepted command line arguments for the aggregator.
+.. NOTE:: If you would like to set up decentralized aggregation with multiple aggregators, you can initiate multiple aggregator instances within one project so that semi-global model will be created.
+
+
 
 Client-side STADLE Integration
 *******************************
@@ -192,8 +178,8 @@ First, BasicClient has to be imported from the ``stadle`` library; this is done 
 
 	from stadle import BasicClient
 
-The BasicClient object can then be created.  The configuration information of the
-BasicClient can be set by passing a config file path through the constructor
+The BasicClient object can then be created. The configuration information of the BasicClient can be set by passing a config file path through the constructor. Refer to :ref:`Config File Documentation` for details
+on the config file parameters.
 
 .. code-block::
 	:linenos:
