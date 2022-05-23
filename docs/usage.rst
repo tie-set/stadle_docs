@@ -7,23 +7,69 @@ Also, please download the sample codes from `here`_ in which the STADLE librarie
 
 .. _here: https://github.com/tie-set/stadle_examples
 
-Running Server-Side STADLE Components
+STADLE Aggregator Functionalities
 **************************************
 
-The STADLE server-side components such as persistence server and aggregators can be configured through the `stadle.ai`_ dashboard as explained in the Quickstart.
+The STADLE aggregators can be configured through the `stadle.ai`_ dashboard as explained in the Quickstart and its User Guide.
 
 .. _stadle.ai: https://stadle.ai/
 
+Creating Project 
+---------------------
+Once you create your own account, the first thing you will be doing is to create a new project on Overview page.
+In one project, you will be able to assign an AI model such as VGG16.
+If you would like to federate many AI models, you will have to create multiple projects for each AI model to be aggregated as the architecture of the AI model needs to be consistent among all the agents that are connected to the aggregator.
+
+.. NOTE:: With your free account, you will be able to create only one project.
 
 Initiating Aggregator
 ---------------------
+Once your create a project, you will be able to initiate aggregator(s) on Overview page.
+If you would like to set up decentralized aggregation with multiple aggregators, you can initiate multiple aggregator instances within one project so that semi-global model will be created.
 
-Once you create your own account, you will be able to create a new project on overview page of the dashboard.
-Within one project you will be able to assign an AI model such as VGG16.
-If you would like to federate many AI models, you will have to create multiple projects for each AI model to be aggregated as the architecture of the AI model needs to be consistent among all the agents that are connected to the aggregator.
+.. NOTE:: With your free account, you will be able to initiate only one aggregator. 
 
-.. NOTE:: If you would like to set up decentralized aggregation with multiple aggregators, you can initiate multiple aggregator instances within one project so that semi-global model will be created.
+Downloading Models
+--------------------------
+You will be able to download the most recent global ML models as well as the most recent local models and bestperformance models on the STADLE dashboard.
 
+Completing Current Round
+-------------------------
+This fanctionality provides the ability to wrap up the current round of aggregation. 
+An aggregator needs to collect the certain number of ML models in order to proceed with the aggregation process.
+However, you can force the aggregation to happen even if there are not enough local models collected from agents by executing "Complete Current Round" functionality.
+
+
+Aggregation Threshold
+----------------------
+
+This specifies how much local models need to be collected over the active agents connected to the aggregator. For example, if the "Aggergation Threshold" is 0.7, we need 70% of local models from the active agents.
+
+Agent Timeout
+----------------
+This feature provides the time out functionality that disconnects active agents if the aggregator has not heard from the agents after the seconds specified by the user. For example, if the timeout value is 30 and an agent is stopped or disconnected from the network for 30 seconds, the aggregator sets this agent's status as TIMEOUT. If the agent's status becomes TIMEOUT, this agent is not counted as an active agent and excluded from the aggregation process unless it is connected to the aggregator again. If the timeout value is 0, then this agent timeout functionality itself is disabled.
+
+Aggregation Method Selection
+-----------------------------
+While FedAvg is used as a default aggregation method as a powerful approach for many applications, you can pick up the most suitable aggregation method for your ML application. The aggregation methods that are currently supported include FedAvg, Geometric Median, Coordinate-Wise Median, Krum, and Krum Averaging.
+
+Synthesize Semi-Global Models
+--------------------------------
+STADLE supports decentralized architecture of aggregators where multiple aggregators can be set up to synthesize the another layer of global models, which we call Semi-Global Models (SG Models). Semi-Global Models are STADLE's powerful approach to create the global model in a decentralized manner so that you can scale the federated learning horizontally.
+
+
+Aggregation Management
+----------------------------------
+On the Aggregation Management page, you will be able to check the Current Round, the Maximum Number of Connectable Active Agents, the Number of Active Agents Participating, the Number of Local Models Needed for Aggregation, and the Number of Local Models Collected.
+
+Performance Tracking
+---------------------
+Performance of the uploaded local ML models for each aggregation round can be tracked on the Dashboard as well as Performance Tracking page. You can monitor the learning process for each metrics of your ML models there.
+
+
+Stopping & Restarting aggregators
+-----------------------------------
+You can stop/restart aggregators on the Config Info & Settings page. The aggregator status then becomes "INACTIVE" or "ACTIVE" after successfully stoping/restarting the aggregators, respectively.
 
 
 Client-side STADLE Integration

@@ -78,6 +78,5 @@ On the STADLE dashboard, you will see the number of connected ML agents and down
 
 You have successfully completed all the steps to conduct a STADLE project properly. The aggregation process for each round can be checked and managed on Aggregation Management page. Also, the configuration information and system status of aggregators and agents can be checked on Config Info & Settings page.
 
-You will also be able to download the recent global and local models as well as best performing models on the STADLE dashboard.
+You will also be able to download the recent global, local, best performance models as well as keep track of the performance of ML models on the STADLE dashboard.
 
-Performance of the uploaded local ML models for each aggregation round can be tracked on the Dashboard as well as Performance Tracking page. You can monitor the learning process for each metrics of your ML models on the Performance Tracking page.
