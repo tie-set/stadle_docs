@@ -22,7 +22,6 @@ Table of Contents:
    usage
    documentation
    contributing
-   license
 
 .. _installation:
 
@@ -51,6 +50,5 @@ Table of Contents:
    :maxdepth: 3
 
    git/index
-
 
 
