@@ -20,8 +20,8 @@ BasicClient
 .. function:: stadle.BasicClient(config_file: str = None,\
                  simulation_flag=True,\
                  aggregator_ip_address: str = None,\
-                 reg_socket: str = None,\
-                 exch_socket: str = None,\
+                 reg_port: str = None,\
+                 exch_port: str = None,\
                  model_path: str = None,\
                  agent_running: bool = True)
 
@@ -31,8 +31,8 @@ BasicClient
     :param config_file: Specifies the path of the aggregator config file to read parameter values from, if not provided in the respective constructor parameter. Defaults to value of agent_config_path environmental variable (normally set to setups/config_agent.json) if no path is provided.
     :param simulation_flag: Determines if client should operate in simulation mode for testing, or production mode; simulation mode uses the default aggregator token and displays debug information at runtime.
     :param aggregator_ip_address: IP address of the aggregator instance to connect to.
-    :param reg_socket: Port to be used to create socket for registering through aggregator.
-    :param exch_socket: *Deprecated*
+    :param reg_port: Port to be used to create port for registering through aggregator.
+    :param exch_port: *Deprecated*
     :param model_path: Path to folder used for local storage (client state, id, local and sg models).
     :param agent_running: Flag to determine if agent should actively participate in model exchange with aggregator.
 
@@ -68,8 +68,8 @@ IntegratedClient
 .. function:: stadle.IntegratedClient(config_file: str = None,\
                  simulation_flag=True,\
                  aggregator_ip_address: str = None,\
-                 reg_socket: str = None,\
-                 exch_socket: str = None,\
+                 reg_port: str = None,\
+                 exch_port: str = None,\
                  model_path: str = None,\
                  agent_running: bool = True)
 
@@ -79,8 +79,8 @@ IntegratedClient
     :param config_file: Specifies the path of the aggregator config file to read parameter values from, if not provided in the respective constructor parameter. Defaults to value of agent_config_path environmental variable (normally set to setups/config_agent.json) if no path is provided.
     :param simulation_flag: Determines if client should operate in simulation mode for testing, or production mode; simulation mode uses the default aggregator token and displays debug information at runtime.
     :param aggregator_ip_address: IP address of the aggregator instance to connect to.
-    :param reg_socket: Port to be used to create socket for registering through aggregator.
-    :param exch_socket: *Deprecated*
+    :param reg_port: Port to be used to create port for registering through aggregator.
+    :param exch_port: *Deprecated*
     :param model_path: Path to folder used for local storage (client state, id, local and sg models).
     :param agent_running: Flag to determine if agent should actively participate in model exchange with aggregator.
 
@@ -143,7 +143,7 @@ Config File Documentation
 Configuration of Agent
 ------------------------
 
-This JSON file, for example `config_agent.json` file, is read by STADLE agents for initial setup.
+This JSON file, for example `config_agent.json` file, is read by STADLE admin and ML agents for initial setup.
 Here is the sample content of the JSON file.
 
 .. code-block::
@@ -175,7 +175,7 @@ Here is the sample content of the JSON file.
   - e.g. `state`
 - `aggr_ip`: An aggregator IP address for agents to connect.
   - e.g. `localhost`, `123.456.789`
-- `reg_port`: A socket number used by agents to join an aggregator for the first time.
+- `reg_port`: A port number used by agents to join an aggregator for the first time.
   - e.g. `8765`
 - `init_weights_flag`: A flag used for initializing weights.
   - e.g. `1`
@@ -183,7 +183,7 @@ Here is the sample content of the JSON file.
   - e.g. `stadle12345`
 - `simulation`: A flag used to enable a simulation mode.
   - e.g. `True`
-- `exch_port`: A socket number used to upload local models to an aggregator from an agent. Agents will get to know this socket from the communications with an aggregator.
+- `exch_port`: A port number used to upload local models to an aggregator from an agent. Agents will get to know this port from the communications with an aggregator.
   - e.g. `7890`
 
 
