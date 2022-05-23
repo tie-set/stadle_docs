@@ -54,8 +54,6 @@ All those components are connected using WebSockets and exchange machine learnin
   :width: 500
 
 
-STADLE Initialization 
-*************************************
 
 .. Components Registration
 .. ------------------------
@@ -66,7 +64,8 @@ STADLE Initialization
 
 
 Initial Model Upload Process by Admin Agent
---------------------------------------------
+*********************************************
+
 The first step of running a federated learning process is to register the initial ML model which we call a base model.
 The architecture of the base model will be used in the entire process of FL by all the aggregators and agents. 
 We call the agent that uploads the initial base model an “admin agent”.

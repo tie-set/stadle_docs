@@ -52,6 +52,5 @@ Table of Contents:
 
    git/index
 
-.. _license:
 
 
