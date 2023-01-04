@@ -170,11 +170,12 @@ BasicClient
 
     :return: Configured BasicClient object
 
-.. function:: stadle.BasicClient.send_trained_model(model)
+.. function:: stadle.BasicClient.send_trained_model(model, perf_values)
 
     Extract weights from locally-trained model and send weights to aggregator.
 
     :param model: Locally-trained model to extract weights from.
+    :param perf_values: A dictionary containing key-value pairs for different performance metrics to be displayed in STADLE Ops.  Valid keys are {'performance','accuracy','loss_training','loss_valid','loss_test','f_score','reward'}.
     :return: False if new aggregated model was received during local training process (nothing sent in this case), True otherwise
 
 .. function:: stadle.BasicClient.wait_for_sg_model()
