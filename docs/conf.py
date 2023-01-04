@@ -25,7 +25,7 @@ copyright = '2022, TieSet'
 author = 'Kiyoshi Nakayama and Anthony Maddalone'
 
 # The full version, including alpha/beta/rc tags
-release = '2.0'
+release = '0.0.4'
 
 
 # -- General configuration ---------------------------------------------------

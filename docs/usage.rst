@@ -1,45 +1,79 @@
-*****
 Usage
-*****
+=============
 
 This section covers the requisite steps for integrating STADLE with a basic deep learning training process.
-Please refer to :ref:`Installation` to set up the virtual environment used to run STADLE.
+Please refer to :ref:`Quickstart` to set up the client environment to connect to STADLE.
+Also, please download the sample codes from `here`_ in which the STADLE libraries are already integrated.
 
-Running Server-Side STADLE Components
-=====================================
+.. _here: https://github.com/tie-set/stadle_examples
 
-There are two main STADLE-side components that must be running to manage a federated learning process.
+STADLE Aggregator Functionalities
+**************************************
 
-The first is the **persistence server** - this component is in charge of managing the model parameters and other
-FL-specific data generated while using STADLE.  With the STADLE virtual environment active, the persistence server
-can be started with the following command:
+The STADLE aggregators can be configured through the `stadle.ai`_ dashboard as explained in the Quickstart and its User Guide.
 
-::
+.. _stadle.ai: https://stadle.ai/
 
-	stadle persistence-server
-The persistence server can be configured with a config file by including the path to the file as an argument:
+Creating Project 
+---------------------
+Once you create your own account, the first thing you will be doing is to create a new project on Overview page.
+In one project, you will be able to assign an AI model such as VGG16.
+If you would like to federate many AI models, you will have to create multiple projects for each AI model to be aggregated as the architecture of the AI model needs to be consistent among all the agents that are connected to the aggregator.
 
-::
+.. NOTE:: With your free account, you will be able to create only one project.
 
-	stadle persistence-server --config_file /path/to/config/file.json
-Specific parameters can also be set using command line arguments - refer to :ref:`Config File Documentation` for details
-on the config file parameters, and run ``stadle persistence-server --help`` to see the accepted command line arguments for the persistence server.
+Initiating Aggregator
+---------------------
+Once your create a project, you will be able to initiate aggregator(s) on Overview page.
+If you would like to set up decentralized aggregation with multiple aggregators, you can initiate multiple aggregator instances within one project so that semi-global model will be created.
+
+.. NOTE:: With your free account, you will be able to initiate only one aggregator. 
+
+Downloading Models
+--------------------------
+You will be able to download the most recent global ML models as well as the most recent local models and bestperformance models on the STADLE dashboard.
+
+Completing Current Round
+-------------------------
+This fanctionality provides the ability to wrap up the current round of aggregation. 
+An aggregator needs to collect the certain number of ML models in order to proceed with the aggregation process.
+However, you can force the aggregation to happen even if there are not enough local models collected from agents by executing "Complete Current Round" functionality.
 
 
-The second STADLE-side component is the **aggregator** - as the name suggests, this component is in charge of collecting
-and aggreagting the models it receives from the clients performing local training to produce cluster models.  It then
-communicates with the persistence server to aggregate a sample of cluster models and produce a semi-global model, which is
-sent back to the clients for the next round of local training.  Similarly, the aggregator can be started with the following
-command:
+Aggregation Threshold
+----------------------
 
-::
+This specifies how much local models need to be collected over the active agents connected to the aggregator. For example, if the "Aggergation Threshold" is 0.7, we need 70% of local models from the active agents.
 
-	stadle aggregator --config_file /path/to/config/file.json
-Specific parameters can be set using command line arguments - refer to :ref:`Config File Documentation` for details
-on the config file parameters, and run ``stadle aggregator --help`` to see the accepted command line arguments for the aggregator.
+Agent Timeout
+----------------
+This feature provides the time out functionality that disconnects active agents if the aggregator has not heard from the agents after the seconds specified by the user. For example, if the timeout value is 30 and an agent is stopped or disconnected from the network for 30 seconds, the aggregator sets this agent's status as TIMEOUT. If the agent's status becomes TIMEOUT, this agent is not counted as an active agent and excluded from the aggregation process unless it is connected to the aggregator again. If the timeout value is 0, then this agent timeout functionality itself is disabled.
+
+Aggregation Method Selection
+-----------------------------
+While FedAvg is used as a default aggregation method as a powerful approach for many applications, you can pick up the most suitable aggregation method for your ML application. The aggregation methods that are currently supported include FedAvg, Geometric Median, Coordinate-Wise Median, Krum, and Krum Averaging.
+
+Synthesize Semi-Global Models
+--------------------------------
+STADLE supports decentralized architecture of aggregators where multiple aggregators can be set up to synthesize the another layer of global models, which we call Semi-Global Models (SG Models). Semi-Global Models are STADLE's powerful approach to create the global model in a decentralized manner so that you can scale the federated learning horizontally.
+
+
+Aggregation Management
+----------------------------------
+On the Aggregation Management page, you will be able to check the Current Round, the Maximum Number of Connectable Active Agents, the Number of Active Agents Participating, the Number of Local Models Needed for Aggregation, and the Number of Local Models Collected.
+
+Performance Tracking
+---------------------
+Performance of the uploaded local ML models for each aggregation round can be tracked on the Dashboard as well as Performance Tracking page. You can monitor the learning process for each metrics of your ML models there.
+
+
+Stopping & Restarting aggregators
+-----------------------------------
+You can stop/restart aggregators on the Config Info & Settings page. The aggregator status then becomes "INACTIVE" or "ACTIVE" after successfully stoping/restarting the aggregators, respectively.
+
 
 Client-side STADLE Integration
-==============================
+*******************************
 
 This section will cover the process of integrating STADLE with existing PyTorch code used to train a CNN on the CIFAR-10
 dataset.
@@ -190,8 +224,8 @@ First, BasicClient has to be imported from the ``stadle`` library; this is done 
 
 	from stadle import BasicClient
 
-The BasicClient object can then be created.  The configuration information of the
-BasicClient can be set by passing a config file path through the constructor
+The BasicClient object can then be created. The configuration information of the BasicClient can be set by passing a config file path through the constructor. Refer to :ref:`Config File Documentation` for details
+on the config file parameters.
 
 .. code-block::
 	:linenos:
@@ -233,43 +267,45 @@ shows an example of how this can be done within the main training loop of the lo
 training code:
 
 .. code-block::
-	:linenos:
+    :linenos:
+    
+    for epoch in range(num_epochs):
+        print('\nEpoch: %d' % (epoch + 1))
+        
+        """
+        Addition for STADLE integration
+        """
+        if (epoch % 2 == 0):
+            # Don't send model at beginning of training
+        
+        if (epoch != 0):
+            stadle_client.send_trained_model(agent.target_net)
 
-	for epoch in range(num_epochs):
-		print('\nEpoch: %d' % (epoch + 1))
-		"""
-		Addition for STADLE integration
-		"""
-		if (epoch % 2 == 0):
-			# Don't send model at beginning of training
-            if (epoch != 0):
-                stadle_client.send_trained_model(model)
+        sg_model_dict = stadle_client.wait_for_sg_model()
 
-            sg_model_dict = stadle_client.wait_for_sg_model()
+        model.load_state_dict(sg_model_dict)
 
-            model.load_state_dict(sg_model_dict)
+        model.train()
+        train_loss = 0
+        correct = 0
+        total = 0
 
-		model.train()
-		train_loss = 0
-		correct = 0
-		total = 0
+        for batch_idx, (inputs, targets) in enumerate(trainloader):
+            inputs, targets = inputs.to(device), targets.to(device)
 
-		for batch_idx, (inputs, targets) in enumerate(trainloader):
-			inputs, targets = inputs.to(device), targets.to(device)
+            optimizer.zero_grad()
+            outputs = model(inputs)
+            loss = criterion(outputs, targets)
 
-			optimizer.zero_grad()
-			outputs = model(inputs)
-			loss = criterion(outputs, targets)
+            loss.backward()
+            optimizer.step()
 
-			loss.backward()
-			optimizer.step()
+            _, predicted = outputs.max(1)
+            total += targets.size(0)
+            correct += predicted.eq(targets).sum().item()
 
-			_, predicted = outputs.max(1)
-			total += targets.size(0)
-			correct += predicted.eq(targets).sum().item()
-
-			sys.stdout.write('\r'+f"\rEpoch Accuracy: {(100*correct/total):.2f}%")
-		print('\n')
+            sys.stdout.write('\r'+f"\rEpoch Accuracy: {(100*correct/total):.2f}%")
+        print('\n')
 
 Step 4: Disconnect from STADLE
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -333,35 +369,35 @@ these abstractions in format.  The following are template implementations of the
 Train Function:
 
 .. code-block::
-	:linenos:
-
-	def train(model, data, **kwargs):
-		# Use data to locally train model
-		# kwargs used to pass general parameters to function
-
-	    return locally_trained_model, average_training_loss
+    :linenos:
+    
+    def train(model, data, **kwargs):
+        # Use data to locally train model
+        # kwargs used to pass general parameters to function
+        
+        return locally_trained_model, average_training_loss
 
 Cross-Validation Function:
 
 .. code-block::
-	:linenos:
-
-	def cross_validate(model, data, **kwargs):
-		# Use data to compute accuracy or other performance metric (validation set)
-		# kwargs used to pass general parameters to function
-
-	    return acc, ave_loss
+    :linenos:
+    
+    def cross_validate(model, data, **kwargs):
+        # Use data to compute accuracy or other performance metric (validation set)
+        # kwargs used to pass general parameters to function
+        
+        return acc, ave_loss
 
 Test Function:
 
 .. code-block::
-	:linenos:
+    :linenos:
 
-	def test(model, data, **kwargs):
-		# Use data to compute accuracy or other performance metric (test set)
-		# kwargs used to pass general parameters to function
-
-	    return acc, ave_loss
+    def test(model, data, **kwargs):
+        # Use data to compute accuracy or other performance metric (test set)
+        # kwargs used to pass general parameters to function
+        
+        return acc, ave_loss
 
 
 The IntegratedClient will go through the following steps to fulfill the agent-side role in FL:
@@ -378,53 +414,52 @@ The CIFAR-10 local training example code can then be segmented into these functi
 Train Function (CIFAR-10):
 
 .. code-block::
-	:linenos:
-
-	def train(model, data, **kwargs):
-		lr = float(kwargs.get("lr")) if kwargs.get("lr") else 0.001
-	    momentum = float(kwargs.get("momentum")) if kwargs.get("momentum") else 0.9
-	    epochs = int(kwargs.get("epochs")) if kwargs.get("epochs") else 2
-	    device = kwargs.get("device") if kwargs.get("device") else 'cpu'
-
-	    model = model.to(device)
-
-	    criterion = nn.CrossEntropyLoss()
-	    optimizer = optim.SGD(model.parameters(), lr=lr,
+    :linenos:
+     
+    def train(model, data, **kwargs):
+        lr = float(kwargs.get("lr")) if kwargs.get("lr") else 0.001
+        momentum = float(kwargs.get("momentum")) if kwargs.get("momentum") else 0.9
+        epochs = int(kwargs.get("epochs")) if kwargs.get("epochs") else 2
+        device = kwargs.get("device") if kwargs.get("device") else 'cpu'
+        
+        model = model.to(device)
+        
+        criterion = nn.CrossEntropyLoss()
+        optimizer = optim.SGD(model.parameters(), lr=lr,
 	                          momentum=momentum, weight_decay=5e-4)
-	    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
+        
+        ave_loss = []
 
-	    ave_loss = []
+        for epoch in range(epochs):  # loop over the dataset multiple times
 
-	    for epoch in range(epochs):  # loop over the dataset multiple times
+            print('\nEpoch: %d' % (epoch + 1))
 
-	        print('\nEpoch: %d' % (epoch + 1))
+            model.train()
+            train_loss = 0
+            correct = 0
+            total = 0
+            for batch_idx, (inputs, targets) in enumerate(trainloader):
+                inputs, targets = inputs.to(device), targets.to(device)
 
-	        model.train()
-	        train_loss = 0
-	        correct = 0
-	        total = 0
-	        for batch_idx, (inputs, targets) in enumerate(trainloader):
-	            inputs, targets = inputs.to(device), targets.to(device)
+                optimizer.zero_grad()
+                outputs = model(inputs)
+                loss = criterion(outputs, targets)
 
-	            optimizer.zero_grad()
-	            outputs = model(inputs)
-	            loss = criterion(outputs, targets)
+                loss.backward()
+                optimizer.step()
 
-	            loss.backward()
-	            optimizer.step()
+                train_loss += loss.item()
+                ave_loss.append(train_loss)
+                _, predicted = outputs.max(1)
+                total += targets.size(0)
+                correct += predicted.eq(targets).sum().item()
 
-	            train_loss += loss.item()
-	            ave_loss.append(train_loss)
-	            _, predicted = outputs.max(1)
-	            total += targets.size(0)
-	            correct += predicted.eq(targets).sum().item()
+        ave_loss = sum(ave_loss) / len(ave_loss)
 
-	    ave_loss = sum(ave_loss) / len(ave_loss)
+        model = model.to('cpu')
 
-	    model = model.to('cpu')
-
-	    return model, ave_loss
-
+        return model, ave_loss
 
 Cross-Validation Function (CIFAR-10):
 
@@ -568,17 +603,17 @@ The following is example code to set up the IntegratedClient with the previously
 start the FL process:
 
 .. code-block::
-	:linenos:
+    :linenos:
 
-	parser = argparse.ArgumentParser(description='STADLE CIFAR10 Training')
+    parser = argparse.ArgumentParser(description='STADLE CIFAR10 Training')
     parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
     parser.add_argument('--lt_epochs', default=3)
 
-	args = parser.parse_args()
+    args = parser.parse_args()
 
     device = 'cuda'
 
-	model = VGG('VGG16')
+    model = VGG('VGG16')
 
 Read in learning rate and number of local training epochs from command line arguments, set training device
 and define model to be trained.
@@ -599,9 +634,9 @@ and define model to be trained.
 Use the same CIFAR-10 datasets as the local training example
 
 .. code-block::
-	:linenos:
-
-	stadle_client.set_termination_function(judge_termination, round_to_exit=20, client=stadle_client)
+    :linenos:
+    
+    stadle_client.set_termination_function(judge_termination, round_to_exit=20, client=stadle_client)
     stadle_client.set_training_function(train, trainloader, lr=args.lr, epochs=args.lt_epochs, device=device, agent_name=args.agent_name)
     stadle_client.set_cross_validation_function(cross_validate, testloader, device=device)
     stadle_client.set_testing_function(test, testloader)
@@ -609,16 +644,16 @@ Use the same CIFAR-10 datasets as the local training example
 Pass functions to IntegratedClient for use in internal training loop
 
 .. code-block::
-	:linenos:
+    :linenos:
 
-	stadle_client.set_bm_obj(model)
+    stadle_client.set_bm_obj(model)
     stadle_client.start()
 
 Set the container model for the client, then start the agent FL process
 
 
 Running Client-Side STADLE Components
-=====================================
+**************************************
 
 After starting the requisite server-side STADLE components, there is one final step that must be run to fully
 initialize an FL process with STADLE and prepare for agent connections.  The component responsible for this
@@ -648,14 +683,14 @@ STADLE, and is passed to the AdminAgent to be sent to the persistence server.
 The specific BaseModel object is then created with the VGG16 model structure and information.
 
 .. code-block::
-	:linenos:
-
-	args = admin_arg_parser()
+    :linenos:
+    
+    args = admin_arg_parser()
     admin_agent = AdminAgent(config_file=args.config_path, simulation_flag=args.simulation,
                              aggregator_ip_address=args.ip_address, reg_socket=args.reg_port,
                              exch_socket=args.exch_port, model_path=args.model_path, base_model=base_model,
                              agent_running=args.agent_running)
-
+    
     admin_agent.preload()
     admin_agent.initialize()
 

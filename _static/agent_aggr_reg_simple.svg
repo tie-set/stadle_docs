@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="766px" preserveAspectRatio="none" style="width:728px;height:766px;" version="1.1" viewBox="0 0 728 766" width="728px" zoomAndPan="magnify"><defs><filter height="300%" id="fenc58r4d6ovw" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="81" x2="81" y1="40.4883" y2="723.3203"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="344" x2="344" y1="40.4883" y2="723.3203"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="607.5" x2="607.5" y1="40.4883" y2="723.3203"/><rect fill="#FEFECE" filter="url(#fenc58r4d6ovw)" height="30.4883" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.5;" width="55" x="52" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="59" y="25.5352">Agent</text><rect fill="#FEFECE" filter="url(#fenc58r4d6ovw)" height="30.4883" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.5;" width="55" x="52" y="722.3203"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="59" y="742.8555">Agent</text><rect fill="#FEFECE" filter="url(#fenc58r4d6ovw)" height="30.4883" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.5;" width="93" x="296" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="303" y="25.5352">Aggregator</text><rect fill="#FEFECE" filter="url(#fenc58r4d6ovw)" height="30.4883" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.5;" width="93" x="296" y="722.3203"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="303" y="742.8555">Aggregator</text><rect fill="#FEFECE" filter="url(#fenc58r4d6ovw)" height="30.4883" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.5;" width="138" x="536.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="543.5" y="25.5352">Persistence Server</text><rect fill="#FEFECE" filter="url(#fenc58r4d6ovw)" height="30.4883" rx="10" ry="10" style="stroke:#A80036;stroke-width:1.5;" width="138" x="536.5" y="722.3203"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="543.5" y="742.8555">Persistence Server</text><rect fill="#EEEEEE" filter="url(#fenc58r4d6ovw)" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="721" x="0" y="71.1436"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="721" y1="71.1436" y2="71.1436"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="721" y1="74.1436" y2="74.1436"/><rect fill="#EEEEEE" filter="url(#fenc58r4d6ovw)" height="23.3105" style="stroke:#000000;stroke-width:2.0;" width="182" x="269.5" y="60.4883"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="164" x="275.5" y="77.0566">Aggregator Registration</text><polygon fill="#FBFB77" filter="url(#fenc58r4d6ovw)" points="261,98.7988,428,98.7988,438,109.7988,428,121.7988,261,121.7988,251,109.7988,261,98.7988" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="163" x="263" y="115.3672">Configure aggregator info</text><polygon fill="#A80036" points="595.5,144.4199,605.5,148.4199,595.5,152.4199,599.5,148.4199" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="344.5" x2="601.5" y1="148.4199" y2="148.4199"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="351.5" y="143.6777">send aggregator info</text><polygon fill="#FBFB77" filter="url(#fenc58r4d6ovw)" points="509,161.4199,706,161.4199,716,172.4199,706,184.4199,509,184.4199,499,172.4199,509,161.4199" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="511" y="177.9883">Validate authorized aggregator</text><polygon fill="#FBFB77" filter="url(#fenc58r4d6ovw)" points="538,194.7305,676,194.7305,686,213.7305,676,232.7305,538,232.7305,528,213.7305,538,194.7305" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="540" y="211.2988">Register or update</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="134" x="540" y="226.6094">aggregator info in DB</text><polygon fill="#A80036" points="355.5,270.9727,345.5,274.9727,355.5,278.9727,351.5,274.9727" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="349.5" x2="606.5" y1="274.9727" y2="274.9727"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="235" x="361.5" y="254.9199">response (welcome, latest aggregator</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="361.5" y="270.2305">info, registration failed, etc.)</text><polygon fill="#FBFB77" filter="url(#fenc58r4d6ovw)" points="270,287.9727,419,287.9727,429,298.9727,419,310.9727,270,310.9727,260,298.9727,270,287.9727" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="145" x="272" y="304.541">Update aggregator info</text><rect fill="#EEEEEE" filter="url(#fenc58r4d6ovw)" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="721" x="0" y="336.9385"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="721" y1="336.9385" y2="336.9385"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="721" y1="339.9385" y2="339.9385"/><rect fill="#EEEEEE" filter="url(#fenc58r4d6ovw)" height="23.3105" style="stroke:#000000;stroke-width:2.0;" width="182" x="269.5" y="326.2832"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="164" x="275.5" y="342.8516">Aggregator Registration</text><rect fill="#EEEEEE" filter="url(#fenc58r4d6ovw)" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="721" x="0" y="380.249"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="721" y1="380.249" y2="380.249"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="721" y1="383.249" y2="383.249"/><rect fill="#EEEEEE" filter="url(#fenc58r4d6ovw)" height="23.3105" style="stroke:#000000;stroke-width:2.0;" width="145" x="288" y="369.5938"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="127" x="294" y="386.1621">Agent Registration</text><polygon fill="#FBFB77" filter="url(#fenc58r4d6ovw)" points="15,407.9043,149,407.9043,159,418.9043,149,430.9043,15,430.9043,5,418.9043,15,407.9043" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="130" x="17" y="424.4727">Configure agent info</text><polygon fill="#A80036" points="332.5,453.5254,342.5,457.5254,332.5,461.5254,336.5,457.5254" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="81.5" x2="338.5" y1="457.5254" y2="457.5254"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="143" x="88.5" y="452.7832">participate (agent info)</text><polygon fill="#FBFB77" filter="url(#fenc58r4d6ovw)" points="262,470.5254,426,470.5254,436,481.5254,426,493.5254,262,493.5254,252,481.5254,262,470.5254" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="264" y="487.0938">Validate authorized agent</text><polygon fill="#A80036" points="595.5,516.1465,605.5,520.1465,595.5,524.1465,599.5,520.1465" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="344.5" x2="601.5" y1="520.1465" y2="520.1465"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="351.5" y="515.4043">send agent info</text><polygon fill="#FBFB77" filter="url(#fenc58r4d6ovw)" points="546,533.1465,669,533.1465,679,552.1465,669,571.1465,546,571.1465,536,552.1465,546,533.1465" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="548" y="549.7148">Register or update</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="548" y="565.0254">agent info in DB</text><polygon fill="#A80036" points="92.5,624.6992,82.5,628.6992,92.5,632.6992,88.5,628.6992" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="86.5" x2="343.5" y1="628.6992" y2="628.6992"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="235" x="98.5" y="593.3359">response (welcome, latest agent info,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="238" x="98.5" y="608.6465">updated SG model, registration failed,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="27" x="98.5" y="623.957">etc.)</text><polygon fill="#FBFB77" filter="url(#fenc58r4d6ovw)" points="23,641.6992,139,641.6992,149,652.6992,139,664.6992,23,664.6992,13,652.6992,23,641.6992" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112" x="25" y="658.2676">Update agent info</text><rect fill="#EEEEEE" filter="url(#fenc58r4d6ovw)" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="721" x="0" y="690.665"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="721" y1="690.665" y2="690.665"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="721" y1="693.665" y2="693.665"/><rect fill="#EEEEEE" filter="url(#fenc58r4d6ovw)" height="23.3105" style="stroke:#000000;stroke-width:2.0;" width="145" x="288" y="680.0098"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="127" x="294" y="696.5781">Agent Registration</text><!--MD5=[69ba1b680efed8403dcdb821a2f0514d]
+@startuml
+skinparam sequenceArrowThickness 1
+skinparam roundcorner 20
+skinparam maxmessagesize 240
+
+participant "Agent" as agent
+participant "Aggregator" as agg
+participant "Persistence Server" as db
+
+== Aggregator Registration ==
+
+hnote over agg : Configure aggregator info
+
+agg -> db: send aggregator info
+
+hnote over db : Validate authorized aggregator
+
+hnote over db : Register or update \naggregator info in DB
+
+db - -> agg: response (welcome, latest aggregator info, registration failed, etc.)
+
+hnote over agg : Update aggregator info
+
+== Aggregator Registration ==
+
+== Agent Registration ==
+
+hnote over agent : Configure agent info
+agent -> agg: participate (agent info)
+
+hnote over agg : Validate authorized agent
+
+agg -> db: send agent info
+
+hnote over db : Register or update \nagent info in DB
+
+' db -> agg: response(success or not)
+' hnote over agg : Update the sg_model \nif FL is already started
+
+agg - -> agent: response (welcome, latest agent info, updated SG model, registration failed, etc.)
+
+hnote over agent : Update agent info
+
+== Agent Registration ==
+
+@enduml
+
+@startuml
+skinparam sequenceArrowThickness 1
+skinparam roundcorner 20
+skinparam maxmessagesize 240
+
+participant "Agent" as agent
+participant "Aggregator" as agg
+participant "Persistence Server" as db
+
+== Aggregator Registration ==
+
+hnote over agg : Configure aggregator info
+
+agg -> db: send aggregator info
+
+hnote over db : Validate authorized aggregator
+
+hnote over db : Register or update \naggregator info in DB
+
+db - -> agg: response (welcome, latest aggregator info, registration failed, etc.)
+
+hnote over agg : Update aggregator info
+
+== Aggregator Registration ==
+
+== Agent Registration ==
+
+hnote over agent : Configure agent info
+agent -> agg: participate (agent info)
+
+hnote over agg : Validate authorized agent
+
+agg -> db: send agent info
+
+hnote over db : Register or update \nagent info in DB
+
+
+agg - -> agent: response (welcome, latest agent info, updated SG model, registration failed, etc.)
+
+hnote over agent : Update agent info
+
+== Agent Registration ==
+
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 02:25:05 PST 2021)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
