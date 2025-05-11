@@ -16,7 +16,7 @@
 
 
 ## added this whole line
-import sphinx_rtd_theme
+# import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
