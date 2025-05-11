@@ -1,82 +1,84 @@
 Quickstart
-===============
+==========
 
-Starting using the STADLE platform is as easy as just following the 3 steps below.
+Getting started with the STADLE platform is as easy as following the three steps below.
 
-STEP 1: Set up STADLE Server 
-**************************************
+STEP 1: Set up the STADLE Server
+********************************
 
-Just go to the `stadle.ai`_ and sign up for a free account.
-Then, login to your account, create a new project, and initiate an aggregator.
-Just wait for a few seconds to get the aggregator running.
+Visit `stadle.ai`_ and sign up for a free account.  
+After logging in, create a new project and launch an aggregator.  
+It only takes a few seconds for the aggregator to initialize.
 
-Please also follow the step-by-step instructions on the `Start Yout Project` page in `User Guide`.
+Be sure to follow the step-by-step instructions on the **Start Your Project** page in the **User Guide**.
 
-.. NOTE:: With your free account, you will be able to create one project and initiate one aggregator. The number of agents that can be connected to the aggregator will be also limited.
+.. note::
+
+   With a free account, you can create one project and launch a single aggregator.  
+   The number of agents that can connect to this aggregator is also limited.
 
 .. _stadle.ai: https://stadle.ai/
 
-STEP 2: Install STADLE Client 
-******************************************
+STEP 2: Install the STADLE Client
+*********************************
 
-The STADLE client can be installed using the following commands.
+Install the STADLE client using the following commands.
 
-First upgrade the pip.
+First, upgrade pip:
 
-.. code-block:: python
+.. code-block:: bash
 
-  pip install --upgrade pip
+    pip install --upgrade pip
 
-Then, install the `stadle-client`.
+Then, install the ``stadle-client`` library:
 
-.. code-block:: python
+.. code-block:: bash
 
-  pip install stadle-client
+    pip install stadle-client
 
-.. If the command above is not working with your environment, please try the following command:
+.. note::
 
-.. .. code-block:: python
+   STADLE requires Python version 3.8.0 or newer.
 
-..  pip install --index-url http://3.110.171.230:8080 stadle_client --trusted-host 3.110.171.230 --extra-index-url https://pypi.org/simple
+STEP 3: Run a Local STADLE Example
+**********************************
 
-.. NOTE:: The environment needs to be `Python 3.8.0` or newer.
+Now it's time to use STADLE in your own machine learning workflows.  
+You can quickly test the platform using sample applications provided in the `STADLE examples`_ repository, which already includes the key STADLE client libraries.
 
-
-STEP 3: Run Local STADLE Example Codes  
-******************************************
-
-The next phase is to utilize STADLE libraries by importing them in your local ML processes. You can quickly run and test some of the sample applications from `STADLE examples`_ in which some of the key STADLE client libraries are already connected. To do so, just download the local example codes from the repo.
+Clone the example repository:
 
 .. _STADLE examples: https://github.com/tie-set/stadle_examples
 
-.. code-block:: python
+.. code-block:: bash
 
-  git clone https://github.com/tie-set/stadle_examples.git
+    git clone https://github.com/tie-set/stadle_examples.git
 
+After downloading the examples, refer to the README for instructions on running the applications with STADLE’s client-side APIs.
 
-After downloading the sample codes, just follow the instruction of the README on how to run those applications with the STADLE client-side APIs.
+For example, to run the minimal PyTorch-based example, navigate to the ``stadle_examples/minimal_examples/pytorch`` folder.  
+Edit the agent config file to set the appropriate values:
 
-For example, to run the minimal example using PyTorch, just go to the `"stadle_examples/minimal_examples/pytorch"` folder.
-Then, modify the config files for both admin and ML agents.
-In particular, `"aggr_ip”` should be the "IP Address" and `“reg_port”` should be the "Port to Connect", both shown on the STADLE dashboard.
+- ``aggr_ip``: the **IP Address** shown on your STADLE project dashboard  
+- ``reg_port``: the **Port to Connect** as displayed on the dashboard
 
-Then, run the admin agent with the following command (In this case, the script is named minimal_admin_agent.py). The admin agent uploads the base model that defines the architecture of the ML models that will be aggregated.
+Then, upload the base model using the following command:
 
-.. code-block:: python
+.. code-block:: bash
 
-  python minimal_admin_agent.py
+    stadle upload-model --config_path <path_to_config_file>
 
-Then, go to the STADLE dashboard and update the page after a few seconds. You can check the name of the uploaded base model on the dashboard.
-You can run multiple agents with different agent names. In this case, the name of the local ML process script is "minimal_fl_agent.py". For example, you can run the ML agents like
+After the upload is complete, visit your STADLE project dashboard to verify that the base model has been registered.
 
-.. code-block:: python
+You can now run multiple agents, differentiated by their names.  
+For instance, with the FL agent script ``minimal_fl_agent.py``, run the agents as follows:
 
-  python minimal_fl_agent.py --agent_name AGEMT_NAME_01
-  python minimal_fl_agent.py --agent_name AGEMT_NAME_02
+.. code-block:: bash
 
-On the STADLE dashboard, you will see the number of connected ML agents and downloadable recent global and local models as well as the best performing model.
+    python minimal_fl_agent.py --agent_name AGENT_NAME_01
+    python minimal_fl_agent.py --agent_name AGENT_NAME_02
 
-You have successfully completed all the steps to conduct a STADLE project properly. The aggregation process for each round can be checked and managed on Aggregation Management page. Also, the configuration information and system status of aggregators and agents can be checked on Config Info & Settings page.
+Your STADLE dashboard will display the number of connected ML agents and show the models that have been uploaded or aggregated.
 
-You will also be able to download the recent global, local, best performance models as well as keep track of the performance of ML models on the STADLE dashboard.
-
+Congratulations! You’ve successfully completed all the steps to launch a STADLE project.  
+You can monitor and manage the aggregation process on the **Aggregation Management** page, and view system configurations and status under **Config Info & Settings**.

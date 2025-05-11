@@ -21,7 +21,6 @@ Table of Contents:
    quickstart
    usage
    documentation
-   contributing
 
 .. _installation:
 
@@ -43,8 +42,6 @@ Table of Contents:
    :maxdepth: 3
 
    tutorials/index
-
-.. _contributing:
 
 .. toctree::
    :maxdepth: 3
